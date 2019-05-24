@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "website-build-prod"
+  },
+  "targets": {
+    "website-build-prod": {
+      "hosting": {
+        "superfit": [
+          "superfit"
+        ]
+      }
+    }
+  }
+}

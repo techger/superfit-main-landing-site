@@ -5,12 +5,16 @@ import { AppComponent } from './app.component';
 import { AboutCompanyComponent } from './about-company/about-company.component';
 import { Routes, RouterModule } from '@angular/router';
 import { RootLandingComponent } from './root-landing/root-landing.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutCompanyComponent,
-    RootLandingComponent
+    RootLandingComponent,
+    PrivacyPolicyComponent,
+    TermsOfServiceComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +28,14 @@ import { RootLandingComponent } from './root-landing/root-landing.component';
       {
         path: "company",
         component: AboutCompanyComponent
+      },
+      {
+        path: "privacy-policy",
+        component: PrivacyPolicyComponent
+      },
+      {
+        path: "terms",
+        component: TermsOfServiceComponent
       }
     ])
   ],

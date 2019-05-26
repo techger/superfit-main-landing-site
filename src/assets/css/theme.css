@@ -10960,7 +10960,7 @@ section {
 }
 
 .bg-primary-alt {
-  background: #f3f5fb;
+  background: #fff;
 }
 
 .bg-primary-2-alt {
@@ -12414,7 +12414,7 @@ blockquote .btn {
 }
 
 .divider svg:not([class*='bg']) path {
-  fill: #fff;
+  fill: #F2EFE7;
 }
 
 .divider:not(:first-child) {

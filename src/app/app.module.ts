@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RootLandingComponent } from './root-landing/root-landing.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
+import { OurStoryComponent } from './our-story/our-story.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.com
     AboutCompanyComponent,
     RootLandingComponent,
     PrivacyPolicyComponent,
-    TermsOfServiceComponent
+    TermsOfServiceComponent,
+    OurStoryComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,10 @@ import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.com
       {
         path: "terms",
         component: TermsOfServiceComponent
+      },
+      {
+        path: "our-story",
+        component: OurStoryComponent
       }
     ])
   ],

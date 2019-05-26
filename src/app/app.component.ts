@@ -10,11 +10,6 @@ export class AppComponent {
   constructor(private router: Router) {
 
   }
-  title = 'superfit-landing-website';
+  title = 'SuperFit';
 
-  navigate(route: string) {
-    console.log('navigatin');
-
-    this.router.navigate([route]);
-  }
 }

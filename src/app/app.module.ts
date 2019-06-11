@@ -50,6 +50,10 @@ import { ApiService } from './services/api.service';
         component: TermsOfServiceComponent
       },
       {
+        path: "remoteli",
+        component: RemoteliComponent
+      },
+      {
         path: "our-story",
         component: OurStoryComponent
       },

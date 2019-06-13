@@ -10,8 +10,13 @@ import { RootLandingComponent } from './root-landing/root-landing.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
 import { OurStoryComponent } from './our-story/our-story.component';
+<<<<<<< HEAD
 import { UserProfileComponent } from './user-profile/user-profile.component'
 import { NotFoundComponent } from './not-found/not-found.component'
+=======
+import { RemotelyComponent } from './remotely/remotely.component';
+
+>>>>>>> create first draft of remotely
 import { Angulartics2Module } from 'angulartics2';
 import { ApiService } from './services/api.service';
 
@@ -23,8 +28,12 @@ import { ApiService } from './services/api.service';
     PrivacyPolicyComponent,
     TermsOfServiceComponent,
     OurStoryComponent,
+<<<<<<< HEAD
     UserProfileComponent,
     NotFoundComponent
+=======
+    RemotelyComponent
+>>>>>>> create first draft of remotely
   ],
   imports: [
     BrowserModule,
@@ -50,8 +59,8 @@ import { ApiService } from './services/api.service';
         component: TermsOfServiceComponent
       },
       {
-        path: "remoteli",
-        component: RemoteliComponent
+        path: "remotely",
+        component: RemotelyComponent
       },
       {
         path: "our-story",

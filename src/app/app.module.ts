@@ -9,6 +9,9 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
 import { OurStoryComponent } from './our-story/our-story.component';
 
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +46,10 @@ import { OurStoryComponent } from './our-story/our-story.component';
         path: "our-story",
         component: OurStoryComponent
       }
-    ])
+      ,
+
+    ]),
+    Angulartics2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

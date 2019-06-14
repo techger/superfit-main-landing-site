@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { Angulartics2 } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private router: Router) {
-
-  }
   title = 'SuperFit';
-
+  constructor(
+    private router: Router,
+    private angulartics2: Angulartics2,
+    private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics
+  ) {
+    angulartics2.settings.developerMode = !environment.production
+    angulartics2GoogleAnalytics.startTracking()
+  }
 }

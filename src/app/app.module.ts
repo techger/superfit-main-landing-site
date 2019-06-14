@@ -8,9 +8,9 @@ import { RootLandingComponent } from './root-landing/root-landing.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
 import { OurStoryComponent } from './our-story/our-story.component';
-
+import { UserProfileComponent } from './user-profile/user-profile.component'
+import { NotFoundComponent } from './not-found/not-found.component'
 import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,9 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
     RootLandingComponent,
     PrivacyPolicyComponent,
     TermsOfServiceComponent,
-    OurStoryComponent
+    OurStoryComponent,
+    UserProfileComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +47,16 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
       {
         path: "our-story",
         component: OurStoryComponent
-      }
-      ,
+      },
 
+      {
+        path: "404",
+        component: NotFoundComponent
+      },
+      {
+        path: ":id",
+        component: UserProfileComponent
+      },
     ]),
     Angulartics2Module.forRoot()
   ],

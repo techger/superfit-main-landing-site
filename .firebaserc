@@ -1,12 +1,16 @@
 {
   "projects": {
-    "default": "website-build-prod"
+    "production": "website-build-prod",
+    "staging": "website-build-prod"
   },
   "targets": {
     "website-build-prod": {
       "hosting": {
-        "superfit": [
+        "production": [
           "superfit"
+        ],
+        "staging": [
+          "superfit-staging-landing"
         ]
       }
     }

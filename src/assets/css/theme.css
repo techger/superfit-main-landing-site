@@ -28,7 +28,7 @@
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #212529;
-  --primary-2: #FF8E88;
+  --primary-2: #48BF84;
   --primary-3: #303030;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -2414,8 +2414,8 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-primary-2 {
   color: #212529;
-  background-color: #FF8E88;
-  border-color: #FF8E88;
+  background-color: #48BF84;
+  border-color: #48BF84;
 }
 
 .btn-primary-2:hover {
@@ -2430,8 +2430,8 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-primary-2.disabled, .btn-primary-2:disabled {
   color: #212529;
-  background-color: #FF8E88;
-  border-color: #FF8E88;
+  background-color: #48BF84;
+  border-color: #48BF84;
 }
 
 .btn-primary-2:not(:disabled):not(.disabled):active, .btn-primary-2:not(:disabled):not(.disabled).active, .show>.btn-primary-2.dropdown-toggle {
@@ -2717,14 +2717,14 @@ a.btn.disabled, fieldset:disabled a.btn {
 }
 
 .btn-outline-primary-2 {
-  color: #FF8E88;
-  border-color: #FF8E88;
+  color: #48BF84;
+  border-color: #48BF84;
 }
 
 .btn-outline-primary-2:hover {
   color: #212529;
-  background-color: #FF8E88;
-  border-color: #FF8E88;
+  background-color: #48BF84;
+  border-color: #48BF84;
 }
 
 .btn-outline-primary-2:focus, .btn-outline-primary-2.focus {
@@ -2732,14 +2732,14 @@ a.btn.disabled, fieldset:disabled a.btn {
 }
 
 .btn-outline-primary-2.disabled, .btn-outline-primary-2:disabled {
-  color: #FF8E88;
+  color: #48BF84;
   background-color: transparent;
 }
 
 .btn-outline-primary-2:not(:disabled):not(.disabled):active, .btn-outline-primary-2:not(:disabled):not(.disabled).active, .show>.btn-outline-primary-2.dropdown-toggle {
   color: #212529;
-  background-color: #FF8E88;
-  border-color: #FF8E88;
+  background-color: #48BF84;
+  border-color: #48BF84;
 }
 
 .btn-outline-primary-2:not(:disabled):not(.disabled):active:focus, .btn-outline-primary-2:not(:disabled):not(.disabled).active:focus, .show>.btn-outline-primary-2.dropdown-toggle:focus {
@@ -4728,7 +4728,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 .badge-primary-2 {
   color: #212529;
-  background-color: #FF8E88;
+  background-color: #48BF84;
 }
 
 a.badge-primary-2:hover, a.badge-primary-2:focus {
@@ -6253,7 +6253,7 @@ a.bg-dark:hover, a.bg-dark:focus, button.bg-dark:hover, button.bg-dark:focus {
 }
 
 .bg-primary-2 {
-  background-color: #FF8E88 !important;
+  background-color: #48BF84 !important;
 }
 
 a.bg-primary-2:hover, a.bg-primary-2:focus, button.bg-primary-2:hover, button.bg-primary-2:focus {
@@ -6349,7 +6349,7 @@ a.bg-primary-3:hover, a.bg-primary-3:focus, button.bg-primary-3:hover, button.bg
 }
 
 .border-primary-2 {
-  border-color: #FF8E88 !important;
+  border-color: #48BF84 !important;
 }
 
 .border-primary-3 {
@@ -9552,7 +9552,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-primary-2 {
-  color: #FF8E88 !important;
+  color: #48BF84 !important;
 }
 
 a.text-primary-2:hover, a.text-primary-2:focus {
@@ -9993,8 +9993,8 @@ a.card[class*='hover-shadow']:hover {
 
 .card-icon-3 .badge {
   position: absolute;
-  top: 3rem;
-  right: 3rem;
+  top: 2rem;
+  right: 2rem;
   max-height: 1.5rem;
 }
 
@@ -10531,11 +10531,11 @@ svg.bg-dark-alt * {
 }
 
 svg.bg-primary-2 * {
-  fill: #FF8E88;
+  fill: #48BF84;
 }
 
 svg.bg-primary-2-alt * {
-  fill: #fff8f8;
+  fill: #f4fbf8;
 }
 
 svg.bg-primary-3 * {
@@ -10964,7 +10964,7 @@ section {
 }
 
 .bg-primary-2-alt {
-  background: #fff8f8;
+  background: #f4fbf8;
 }
 
 .bg-primary-3-alt {
@@ -14591,8 +14591,8 @@ https://flickity.metafizzy.co
 }
 
 .hover-bg-primary-2:hover {
-  background: #FF8E88;
-  border-color: #FF8E88;
+  background: #48BF84;
+  border-color: #48BF84;
   color: #212529;
 }
 
@@ -14695,7 +14695,7 @@ https://flickity.metafizzy.co
 }
 
 .icon-round.bg-primary-2 {
-  background: rgba(255, 142, 136, 0.1) !important;
+  background: rgba(72, 191, 132, 0.1) !important;
 }
 
 .icon-round.bg-primary-3 {
@@ -17522,7 +17522,7 @@ body.fade-page {
 }
 
 .process-circle.bg-primary-2:after {
-  background-color: #FF8E88;
+  background-color: #48BF84;
 }
 
 .process-circle.bg-primary-3 {
@@ -17616,7 +17616,7 @@ progress.reading-position {
   appearance: none;
   border: none;
   background-color: transparent;
-  color: #FF8E88;
+  color: #48BF84;
 }
 
 progress.reading-position.reading-position-hidden {
@@ -17628,11 +17628,11 @@ progress.reading-position::-webkit-progress-bar {
 }
 
 progress.reading-position::-webkit-progress-value {
-  background-color: #FF8E88;
+  background-color: #48BF84;
 }
 
 progress.reading-position::-moz-progress-bar {
-  background-color: #FF8E88;
+  background-color: #48BF84;
 }
 
 .article-progress {

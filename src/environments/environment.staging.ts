@@ -3,10 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  superfit_build_base_uri: "https://superfit-build.ngrok.io",
-  superfit_workouts_base_uri: "https://superfit-workouts.ngrok.io",
-  base_uri: 'https://superfitapp.com',
+    production: false,
+    superfit_build_base_uri: "https://build-staging.superfit.dev",
+    superfit_workouts_base_uri: "https://workouts-staging.superfit.dev",
+    base_uri: 'https://superfit-landing-staging.web.app',
 };
 
 /*

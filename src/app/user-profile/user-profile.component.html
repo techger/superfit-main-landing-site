@@ -1,12 +1,4 @@
-<section class="has-divider bg-primary-alt">
-  <div class="divider flip-y">
-    <svg width="100%" height="96px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
-      <path d="M0,0 C16.6666667,66 33.3333333,99 50,99 C66.6666667,99 83.3333333,66 100,0 L100,100 L0,100 L0,0 Z">
-      </path>
-    </svg>
-  </div>
-
+<section class="has-divider">
   <div class="container" data-aos="fade-up">
     <div class="row align-items-center justify-content-around">
       <div class="col-md-5">
@@ -35,15 +27,14 @@
       </div>
       <div class="col-xl-5 col-md-6">
         <div class="pt-3 h1">
-          <div>Hi, I'm Joe,</div>
+          <div>Hi, I'm {{userPublicProfile?.firstName || 'on SuperFit'}},</div>
           <span>A </span>
           <div class="highlight">
             <span data-typed-text data-loop="true" data-type-speed="65"
               data-strings='["visual designer","front-end developer","product creator","restless maker"]'></span>.
           </div>
         </div>
-        <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-          laudantium, totam rem aperiam, eaque ipsa.</p>
+        <p class="lead">{{userPublicProfile?.professional?.shortDescription}}</p>
 
         <div class="row mb-2">
           <div class="col-auto">
@@ -79,216 +70,225 @@
           </div>
         </div>
       </div>
-      <div class="pt-6 row justify-content-center col col-md-auto">
-        <ul data-isotope-filters data-isotope-id="journey-templates" class="nav mb-3">
-          <li class="nav-item">
-            <a href="#" class="nav-link active" data-filter="*">All</a>
+    </div>
+  </div>
+  <div class="divider">
+    <svg width="100%" height="96px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
+      <path style="fill:white"
+        d="M0,0 C16.6666667,66 33.3333333,99 50,99 C66.6666667,99 83.3333333,66 100,0 L100,100 L0,100 L0,0 Z">
+      </path>
+    </svg>
+  </div>
+
+</section>
+
+
+<section class="bg-primary-alt">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-xl-8 col-lg-9">
+        <h2 class="display-5 mx-xl-6">Journeys Created By Me</h2>
+        <p class="lead">
+          A Journey is a training plan that outlines what workouts you will do each week, as well as how each
+          exercise in a workout should be completed.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center col col-md-auto">
+    <ul data-isotope-filters data-isotope-id="journey-templates" class="nav mb-3">
+      <li class="nav-item">
+        <a href="#" class="nav-link active" data-filter="*">All</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" data-filter="basketball">Basketball</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" data-filter="soccer">Soccer</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container" data-isotope-collection data-primary-sort="true" data-isotope-id="journey-templates">
+    <div class="row justify-content-between align-items-center my-2" data-isotope-item data-category="basketball">
+      <div class="col-md-5 col-lg-6 mb-4 mb-md-0" data-aos="fade-right">
+
+        <div class="row justify-content-center">
+
+          <div class="col-xl-9 col-lg-10">
+
+            <div
+              class="card card-icon-3 card-body justify-content-between shadow-3d rotate-left jarallax d-flex text-light">
+              <div
+                style="position:absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.2);">
+              </div>
+              <img src="./assets/img/profile-pic.jpg" alt="Image" class="jarallax-img">
+
+              <div style="z-index: 1;" class="icon-round icon-round-sm bg-primary-3">
+                <span class="align-content-center" style="font-size: 1.3em;">🚀</span>
+
+              </div>
+              <span class="badge bg-primary-2 text-light">4 Phases</span>
+              <div class="pt-2" style="z-index: 1;">
+                <h3>Explosive Jumps: Volume 2</h3>
+                <p class="lead">
+                  Accusantium doloremque laudantium, totam
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade">
+        <h3 class="h1">Basketball</h3>
+        <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+          laudantium, totam rem aperiam, eaque ipsa.</p>
+        <ul class="list-unstyled mb-0">
+          <li class="d-flex py-2">
+            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
+              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
+                  fill="#212529" />
+              </svg>
+
+            </div>
+            <span>
+              <span class="font-weight-bold">Lesson 1:</span>Doloremque laudantium, totam error.</span>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link" data-filter="basketball">Basketball</a>
+          <li class="d-flex py-2">
+            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
+              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
+                  fill="#212529" />
+              </svg>
+
+            </div>
+            <span>
+              <span class="font-weight-bold">Lesson 2:</span>Natus error sit voluptatem</span>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link" data-filter="soccer">Soccer</a>
+          <li class="d-flex py-2">
+            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
+              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
+                  fill="#212529" />
+              </svg>
+
+            </div>
+            <span>
+              <span class="font-weight-bold">Lesson 3:</span>Totam rem aperiam, eaque ipsa.</span>
+          </li>
+          <li class="d-flex py-2">
+            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
+              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
+                  fill="#212529" />
+              </svg>
+
+            </div>
+            <span>
+              <span class="font-weight-bold">Lesson 4:</span>Accusantium doloremque laudantium, totam rem</span>
           </li>
         </ul>
       </div>
+    </div>
+    <div class="row justify-content-between align-items-center my-2" data-isotope-item data-category="soccer">
+      <div class="col-md-5 col-lg-6 mb-4 mb-md-0" data-aos="fade-right">
 
-      <div class="container pt-0" data-isotope-collection data-sort-ascending="true"
-        data-isotope-id="journey-templates">
-        <div class="row justify-content-between align-items-center my-2" data-isotope-item data-category="basketball">
-          <div class="col-md-5 col-lg-6 mb-4 mb-md-0" data-aos="fade-right">
+        <div class="row justify-content-center">
 
-            <div class="row justify-content-center">
+          <div class="col-xl-9 col-lg-10">
 
-              <div class="col-xl-9 col-lg-10">
-
-                <div
-                  class="card card-icon-3 card-body justify-content-between shadow-3d rotate-left jarallax d-flex text-light">
-                  <div
-                    style="position:absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.2);">
-                  </div>
-                  <img src="./assets/img/profile-pic.jpg" alt="Image" class="jarallax-img">
-
-                  <div style="z-index: 1;" class="icon-round icon-round-sm bg-primary-3">
-                    <span class="align-content-center" style="font-size: 1.3em;">🚀</span>
-
-                    <!-- <svg class="icon bg-primary" width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
-                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                      <title>Icon For Display#1</title>
-                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <rect opacity="0" x="0" y="0" width="24" height="24"></rect>
-                        <path
-                          d="M11,20 L11,17 C11,16.4477153 11.4477153,16 12,16 C12.5522847,16 13,16.4477153 13,17 L13,20 L15.5,20 C15.7761424,20 16,20.2238576 16,20.5 C16,20.7761424 15.7761424,21 15.5,21 L8.5,21 C8.22385763,21 8,20.7761424 8,20.5 C8,20.2238576 8.22385763,20 8.5,20 L11,20 Z"
-                          fill="#000000" opacity="0.3"></path>
-                        <path
-                          d="M3,5 L21,5 C21.5522847,5 22,5.44771525 22,6 L22,16 C22,16.5522847 21.5522847,17 21,17 L3,17 C2.44771525,17 2,16.5522847 2,16 L2,6 C2,5.44771525 2.44771525,5 3,5 Z M4.5,8 C4.22385763,8 4,8.22385763 4,8.5 C4,8.77614237 4.22385763,9 4.5,9 L13.5,9 C13.7761424,9 14,8.77614237 14,8.5 C14,8.22385763 13.7761424,8 13.5,8 L4.5,8 Z M4.5,10 C4.22385763,10 4,10.2238576 4,10.5 C4,10.7761424 4.22385763,11 4.5,11 L7.5,11 C7.77614237,11 8,10.7761424 8,10.5 C8,10.2238576 7.77614237,10 7.5,10 L4.5,10 Z"
-                          fill="#000000"></path>
-                      </g>
-                    </svg> -->
-                  </div>
-                  <span class="badge bg-primary-2 text-light">4 Lessons</span>
-                  <div class="pt-2" style="z-index: 1;">
-                    <h3>Explosive Jumps: Volume 2</h3>
-                    <p class="lead">
-                      Accusantium doloremque laudantium, totam
-                    </p>
-                  </div>
-
-                </div>
+            <div
+              class="card card-icon-3 card-body justify-content-between shadow-3d rotate-left jarallax d-flex text-light">
+              <div
+                style="position:absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.2);">
               </div>
+              <img src="./assets/img/profile-pic.jpg" alt="Image" class="jarallax-img">
+
+              <div style="z-index: 1;" class="icon-round icon-round-sm bg-primary-3">
+                <span class="align-content-center" style="font-size: 1.3em;">🚀</span>
+
+              </div>
+              <span class="badge bg-primary-2 text-light">4 Phases</span>
+              <div class="pt-2" style="z-index: 1;">
+                <h3>Explosive Jumps: Volume 2</h3>
+                <p class="lead">
+                  Accusantium doloremque laudantium, totam
+                </p>
+              </div>
+
             </div>
           </div>
-          <div class="col-md-6" data-aos="fade">
-            <h3 class="h1">Basketball</h3>
-            <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-              laudantium, totam rem aperiam, eaque ipsa.</p>
-            <ul class="list-unstyled mb-0">
-              <li class="d-flex py-2">
-                <div class="icon-round icon-round-xs bg-primary-2 mr-2">
-                  <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
-                      fill="#212529" />
-                  </svg>
-
-                </div>
-                <span>
-                  <span class="font-weight-bold">Lesson 1:</span>Doloremque laudantium, totam error.</span>
-              </li>
-              <li class="d-flex py-2">
-                <div class="icon-round icon-round-xs bg-primary-2 mr-2">
-                  <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
-                      fill="#212529" />
-                  </svg>
-
-                </div>
-                <span>
-                  <span class="font-weight-bold">Lesson 2:</span>Natus error sit voluptatem</span>
-              </li>
-              <li class="d-flex py-2">
-                <div class="icon-round icon-round-xs bg-primary-2 mr-2">
-                  <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
-                      fill="#212529" />
-                  </svg>
-
-                </div>
-                <span>
-                  <span class="font-weight-bold">Lesson 3:</span>Totam rem aperiam, eaque ipsa.</span>
-              </li>
-              <li class="d-flex py-2">
-                <div class="icon-round icon-round-xs bg-primary-2 mr-2">
-                  <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
-                      fill="#212529" />
-                  </svg>
-
-                </div>
-                <span>
-                  <span class="font-weight-bold">Lesson 4:</span>Accusantium doloremque laudantium, totam rem</span>
-              </li>
-            </ul>
-          </div>
         </div>
-        <div class="row justify-content-between align-items-center my-2" data-isotope-item data-category="soccer">
-          <div class="col-md-5 col-lg-6 mb-4 mb-md-0" data-aos="fade-right">
-            <div class="row justify-content-center">
-              <div class="col-xl-9 col-lg-10">
-                <div class="card card-icon-3 card-body justify-content-between shadow-3d rotate-left">
-                  <div class="icon-round mb-3 mb-md-4 icon bg-primary-2">
-                    <svg class="icon bg-primary-2" width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
-                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                      <title>Icon For Display#1</title>
-                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <rect opacity="0" x="0" y="0" width="24" height="24"></rect>
-                        <path
-                          d="M11,20 L11,17 C11,16.4477153 11.4477153,16 12,16 C12.5522847,16 13,16.4477153 13,17 L13,20 L15.5,20 C15.7761424,20 16,20.2238576 16,20.5 C16,20.7761424 15.7761424,21 15.5,21 L8.5,21 C8.22385763,21 8,20.7761424 8,20.5 C8,20.2238576 8.22385763,20 8.5,20 L11,20 Z"
-                          fill="#000000" opacity="0.3"></path>
-                        <path
-                          d="M3,5 L21,5 C21.5522847,5 22,5.44771525 22,6 L22,16 C22,16.5522847 21.5522847,17 21,17 L3,17 C2.44771525,17 2,16.5522847 2,16 L2,6 C2,5.44771525 2.44771525,5 3,5 Z M4.5,8 C4.22385763,8 4,8.22385763 4,8.5 C4,8.77614237 4.22385763,9 4.5,9 L13.5,9 C13.7761424,9 14,8.77614237 14,8.5 C14,8.22385763 13.7761424,8 13.5,8 L4.5,8 Z M4.5,10 C4.22385763,10 4,10.2238576 4,10.5 C4,10.7761424 4.22385763,11 4.5,11 L7.5,11 C7.77614237,11 8,10.7761424 8,10.5 C8,10.2238576 7.77614237,10 7.5,10 L4.5,10 Z"
-                          fill="#000000"></path>
-                      </g>
-                    </svg>
-                  </div>
-                  <span class="badge bg-primary-2 text-light">4 Lessons</span>
-                  <div>
-                    <h3>Screen Design</h3>
-                    <p class="lead">
-                      Accusantium doloremque laudantium, totam
-                    </p>
-                  </div>
-                </div>
-              </div>
+      </div>
+      <div class="col-md-6" data-aos="fade">
+        <h3 class="h1">Soccer</h3>
+        <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+          laudantium, totam rem aperiam, eaque ipsa.</p>
+        <ul class="list-unstyled mb-0">
+          <li class="d-flex py-2">
+            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
+              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
+                  fill="#212529" />
+              </svg>
+
             </div>
-          </div>
-          <div class="col-md-6" data-aos="fade">
-            <h3 class="h1">Soccer</h3>
-            <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-              laudantium, totam rem aperiam, eaque ipsa.</p>
-            <ul class="list-unstyled mb-0">
-              <li class="d-flex py-2">
-                <div class="icon-round icon-round-xs bg-primary-2 mr-2">
-                  <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
-                      fill="#212529" />
-                  </svg>
+            <span>
+              <span class="font-weight-bold">Lesson 1:</span>Doloremque laudantium, totam error.</span>
+          </li>
+          <li class="d-flex py-2">
+            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
+              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
+                  fill="#212529" />
+              </svg>
 
-                </div>
-                <span>
-                  <span class="font-weight-bold">Lesson 1:</span>Doloremque laudantium, totam error.</span>
-              </li>
-              <li class="d-flex py-2">
-                <div class="icon-round icon-round-xs bg-primary-2 mr-2">
-                  <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
-                      fill="#212529" />
-                  </svg>
+            </div>
+            <span>
+              <span class="font-weight-bold">Lesson 2:</span>Natus error sit voluptatem</span>
+          </li>
+          <li class="d-flex py-2">
+            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
+              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
+                  fill="#212529" />
+              </svg>
 
-                </div>
-                <span>
-                  <span class="font-weight-bold">Lesson 2:</span>Natus error sit voluptatem</span>
-              </li>
-              <li class="d-flex py-2">
-                <div class="icon-round icon-round-xs bg-primary-2 mr-2">
-                  <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
-                      fill="#212529" />
-                  </svg>
+            </div>
+            <span>
+              <span class="font-weight-bold">Lesson 3:</span>Totam rem aperiam, eaque ipsa.</span>
+          </li>
+          <li class="d-flex py-2">
+            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
+              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
+                  fill="#212529" />
+              </svg>
 
-                </div>
-                <span>
-                  <span class="font-weight-bold">Lesson 3:</span>Totam rem aperiam, eaque ipsa.</span>
-              </li>
-              <li class="d-flex py-2">
-                <div class="icon-round icon-round-xs bg-primary-2 mr-2">
-                  <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
-                      fill="#212529" />
-                  </svg>
-
-                </div>
-                <span>
-                  <span class="font-weight-bold">Lesson 4:</span>Accusantium doloremque laudantium, totam rem</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+            </div>
+            <span>
+              <span class="font-weight-bold">Lesson 4:</span>Accusantium doloremque laudantium, totam rem</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { AboutCompanyComponent } from './about-company/about-company.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -11,6 +13,7 @@ import { OurStoryComponent } from './our-story/our-story.component';
 import { UserProfileComponent } from './user-profile/user-profile.component'
 import { NotFoundComponent } from './not-found/not-found.component'
 import { Angulartics2Module } from 'angulartics2';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,8 @@ import { Angulartics2Module } from 'angulartics2';
   ],
   imports: [
     BrowserModule,
+    NoopAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot([
       {
@@ -48,19 +53,23 @@ import { Angulartics2Module } from 'angulartics2';
         path: "our-story",
         component: OurStoryComponent
       },
-
       {
         path: "404",
         component: NotFoundComponent
       },
       {
-        path: ":id",
+        path: ":username",
         component: UserProfileComponent
       },
+      {
+        path: '**', redirectTo: '/404'
+      }
     ]),
     Angulartics2Module.forRoot()
   ],
-  providers: [],
+  providers: [
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

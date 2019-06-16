@@ -4,8 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "deploy": "ng build --aot --prod && firebase use production && firebase deploy",
-    "deploy-staging": "ng build --configuration=staging && firebase use staging && firebase deploy",
+    "deploy": "npm run swap-prod && ng build --aot --prod && firebase use production && firebase deploy",
+    "deploy-staging": "npm run swap-staging && ng build --configuration=staging && firebase use staging && firebase deploy",
+    "swap-prod": "cp prod.firebase.json firebase.json",
+    "swap-staging": "cp staging.firebase.json firebase.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

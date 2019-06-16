@@ -1,24 +1,18 @@
 import {
   throwError as observableThrowError,
   Observable,
-  throwError
 } from "rxjs";
 import { HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import {
   Phase_Response_V1,
-  Workout_Template_Response_V1,
-  Exercise_Template_Response_V1,
-  ICreatePhaseDto,
   Journey_Templates_Section_Response,
   Journey_Template_Response_V1,
-  IProfessional,
-  ICreate_Workout_Template_Dto_V1,
-  Professional_Response_V1,
   IAthlete_Response_V1,
   ISignInDTO_V1,
 } from "superfitjs";
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { tap } from "rxjs/operators";
+import { HttpClient } from "@angular/common/http";
 import { environment } from "../../environments/environment";
 
 @Injectable()
@@ -77,9 +71,16 @@ export class ApiService {
     });
   }
 
-  fetchUserPublicInfo(username: string): Observable<JSON> {
+  fetchUserPublicInfo(username: string): Observable<any> {
     const url = `${environment.superfit_workouts_base_uri}/v1/show/athletes/${username}`;
-    return this.fetchOne<JSON>(url);
+    console.log(this.http);
+
+    return this.http.get<any>(url)
+      .pipe(
+        tap(x => {
+          console.log(x);
+        }),
+      )
   }
 
   fetchOne<T>(url: string): Observable<T | undefined> {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { ApiService } from '../services/api.service';
+import { Phase_Response_V1, Journey_Template_Response_V1, Level } from 'superfitjs';
 
 @Component({
   selector: 'app-user-profile',
@@ -17,19 +18,57 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
     const username = this.route.snapshot.paramMap.get("username");
 
-    this.apiService.fetchUserPublicInfo(username).subscribe((userPublicProfile?: JSON) => {
-      if (!userPublicProfile) {
-        this.router.navigate(["/404"]);
-        return
-      }
-      this.userPublicProfile = userPublicProfile
+    this.apiService.fetchUserPublicInfo(username)
+      .subscribe((userPublicProfile: any) => {
 
-    }, (error: any) => {
-      console.log(error);
-      this.router.navigate(["/404"]);
-    }, () => {
-      // on complete
-    })
+        if (!userPublicProfile) {
+          this.router.navigate(["/404"]);
+          return
+        }
+
+        this.userPublicProfile = userPublicProfile
+
+      }, (error: any) => {
+        console.log(error);
+        this.router.navigate(["/404"]);
+      })
   }
 
+  sortedPhasesByOrder(phases: Phase_Response_V1[]): Phase_Response_V1[] {
+    return phases.sort((a, b) => a.order - b.order);
+  }
+
+  phaseTitle(phase: Phase_Response_V1): string {
+    if (phase.title) {
+      return phase.title
+    }
+
+    return `Phase ${phase.order + 1}`
+  }
+
+  // first sentence
+  phaseShortDescription(phase: Phase_Response_V1): string {
+    let firstSentence = phase.fullDescription.split(".")[0]
+
+    if (firstSentence) {
+      return `${firstSentence}.`
+    }
+
+    return ""
+  }
+
+  experienceLevelText(journey: Journey_Template_Response_V1): string {
+    switch (journey.level.toLowerCase()) {
+      case Level.Beginner:
+        return "Perfect for all fitness levels"
+      case Level.Intermediate:
+        return "Some training experience preferred"
+      case Level.Advanced:
+        return "Advanced fitness experience preferred"
+      case Level.Pro:
+        return "Advanced movement and strength experience required"
+      default:
+        return "Some training experience preferred"
+    }
+  }
 }

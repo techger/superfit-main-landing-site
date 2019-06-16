@@ -2,7 +2,7 @@ name: 'SuperFit - Sports Workout App'
 shortName: SuperFit
 theme_version: 1.2.0
 bootstrap_version: 4.3.1
-domain: leap
+domain: superfit
 scripts:
     external:
         - aos

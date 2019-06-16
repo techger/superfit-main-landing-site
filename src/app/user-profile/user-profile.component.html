@@ -30,8 +30,8 @@
           <div>Hi, I'm {{userPublicProfile?.firstName || 'on SuperFit'}},</div>
           <span>A </span>
           <div class="highlight">
-            <span data-typed-text data-loop="true" data-type-speed="65"
-              data-strings='["visual designer","front-end developer","product creator","restless maker"]'></span>.
+            <span data-typed-text data-loop="true" data-type-speed="50"
+              data-strings='["sports performance coach","basketball player","running enthusiast","software developer"]'></span>.
           </div>
         </div>
         <p class="lead">{{userPublicProfile?.professional?.shortDescription}}</p>
@@ -82,8 +82,6 @@
   </div>
 
 </section>
-
-
 <section class="bg-primary-alt">
   <div class="container">
     <div class="row justify-content-center text-center mb-5">
@@ -96,22 +94,11 @@
       </div>
     </div>
   </div>
-  <div class="row justify-content-center col col-md-auto">
-    <ul data-isotope-filters data-isotope-id="journey-templates" class="nav mb-3">
-      <li class="nav-item">
-        <a href="#" class="nav-link active" data-filter="*">All</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link" data-filter="basketball">Basketball</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link" data-filter="soccer">Soccer</a>
-      </li>
-    </ul>
-  </div>
 
-  <div class="container" data-isotope-collection data-primary-sort="true" data-isotope-id="journey-templates">
-    <div class="row justify-content-between align-items-center my-2" data-isotope-item data-category="basketball">
+
+  <div class="container">
+    <div *ngFor="let journeyTemplate of userPublicProfile?.professional.journeyTemplates;let i = index"
+      class="row justify-content-between align-items-center my-2">
       <div class="col-md-5 col-lg-6 mb-4 mb-md-0" data-aos="fade-right">
 
         <div class="row justify-content-center">
@@ -123,17 +110,16 @@
               <div
                 style="position:absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.2);">
               </div>
-              <img src="./assets/img/profile-pic.jpg" alt="Image" class="jarallax-img">
+              <img src="{{journeyTemplate.mainImageUrl}}" alt="Image" class="jarallax-img">
 
-              <div style="z-index: 1;" class="icon-round icon-round-sm bg-primary-3">
-                <span class="align-content-center" style="font-size: 1.3em;">🚀</span>
-
+              <div class="icon-round icon-round-sm">
+                <!-- <span class="align-content-center" style="font-size: 1.3em;">🚀</span> -->
               </div>
-              <span class="badge bg-primary-2 text-light">4 Phases</span>
+              <span class="badge bg-primary-2 text-light">{{journeyTemplate.phases.length}} Phases</span>
               <div class="pt-2" style="z-index: 1;">
-                <h3>Explosive Jumps: Volume 2</h3>
+                <h3>{{journeyTemplate.title}}</h3>
                 <p class="lead">
-                  Accusantium doloremque laudantium, totam
+                  {{journeyTemplate.sport  | titlecase }} Training Plan
                 </p>
               </div>
 
@@ -142,11 +128,10 @@
         </div>
       </div>
       <div class="col-md-6" data-aos="fade">
-        <h3 class="h1">Basketball</h3>
-        <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-          laudantium, totam rem aperiam, eaque ipsa.</p>
+        <h3 class="h1">{{journeyTemplate.title}}</h3>
+        <p class="lead">{{journeyTemplate.shortDescription}}</p>
         <ul class="list-unstyled mb-0">
-          <li class="d-flex py-2">
+          <li class=" d-flex py-2">
             <div class="icon-round icon-round-xs bg-primary-2 mr-2">
               <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -157,9 +142,24 @@
 
             </div>
             <span>
-              <span class="font-weight-bold">Lesson 1:</span>Doloremque laudantium, totam error.</span>
+              <span class="font-weight-bold">{{ journeyTemplate.level}}:
+              </span>{{experienceLevelText(journeyTemplate)}}</span>
           </li>
-          <li class="d-flex py-2">
+
+          <li class=" d-flex py-2">
+            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
+              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
+                  fill="#212529" />
+              </svg>
+
+            </div>
+            <span
+              class="font-weight-bold">{{journeyTemplate.accessLevel == "free" ? 'Free' : "Available on SuperFit Pro"}}</span>
+          </li>
+          <!-- <li *ngFor="let phase of sortedPhasesByOrder(journeyTemplate.phases)" class=" d-flex py-2">
             <div class="icon-round icon-round-xs bg-primary-2 mr-2">
               <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -170,126 +170,11 @@
 
             </div>
             <span>
-              <span class="font-weight-bold">Lesson 2:</span>Natus error sit voluptatem</span>
-          </li>
-          <li class="d-flex py-2">
-            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
-              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
-                  fill="#212529" />
-              </svg>
-
-            </div>
-            <span>
-              <span class="font-weight-bold">Lesson 3:</span>Totam rem aperiam, eaque ipsa.</span>
-          </li>
-          <li class="d-flex py-2">
-            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
-              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
-                  fill="#212529" />
-              </svg>
-
-            </div>
-            <span>
-              <span class="font-weight-bold">Lesson 4:</span>Accusantium doloremque laudantium, totam rem</span>
-          </li>
+              <span class="font-weight-bold">{{ phaseTitle(phase)}}: </span>{{phaseShortDescription(phase)}}</span>
+          </li> -->
         </ul>
       </div>
     </div>
-    <div class="row justify-content-between align-items-center my-2" data-isotope-item data-category="soccer">
-      <div class="col-md-5 col-lg-6 mb-4 mb-md-0" data-aos="fade-right">
 
-        <div class="row justify-content-center">
-
-          <div class="col-xl-9 col-lg-10">
-
-            <div
-              class="card card-icon-3 card-body justify-content-between shadow-3d rotate-left jarallax d-flex text-light">
-              <div
-                style="position:absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.2);">
-              </div>
-              <img src="./assets/img/profile-pic.jpg" alt="Image" class="jarallax-img">
-
-              <div style="z-index: 1;" class="icon-round icon-round-sm bg-primary-3">
-                <span class="align-content-center" style="font-size: 1.3em;">🚀</span>
-
-              </div>
-              <span class="badge bg-primary-2 text-light">4 Phases</span>
-              <div class="pt-2" style="z-index: 1;">
-                <h3>Explosive Jumps: Volume 2</h3>
-                <p class="lead">
-                  Accusantium doloremque laudantium, totam
-                </p>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6" data-aos="fade">
-        <h3 class="h1">Soccer</h3>
-        <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-          laudantium, totam rem aperiam, eaque ipsa.</p>
-        <ul class="list-unstyled mb-0">
-          <li class="d-flex py-2">
-            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
-              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
-                  fill="#212529" />
-              </svg>
-
-            </div>
-            <span>
-              <span class="font-weight-bold">Lesson 1:</span>Doloremque laudantium, totam error.</span>
-          </li>
-          <li class="d-flex py-2">
-            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
-              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
-                  fill="#212529" />
-              </svg>
-
-            </div>
-            <span>
-              <span class="font-weight-bold">Lesson 2:</span>Natus error sit voluptatem</span>
-          </li>
-          <li class="d-flex py-2">
-            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
-              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
-                  fill="#212529" />
-              </svg>
-
-            </div>
-            <span>
-              <span class="font-weight-bold">Lesson 3:</span>Totam rem aperiam, eaque ipsa.</span>
-          </li>
-          <li class="d-flex py-2">
-            <div class="icon-round icon-round-xs bg-primary-2 mr-2">
-              <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z"
-                  fill="#212529" />
-              </svg>
-
-            </div>
-            <span>
-              <span class="font-weight-bold">Lesson 4:</span>Accusantium doloremque laudantium, totam rem</span>
-          </li>
-        </ul>
-      </div>
-    </div>
   </div>
 </section>

@@ -5,7 +5,7 @@ import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { AboutCompanyComponent } from './about-company/about-company.component';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { RootLandingComponent } from './root-landing/root-landing.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
@@ -15,6 +15,10 @@ import { NotFoundComponent } from './not-found/not-found.component'
 import { Angulartics2Module } from 'angulartics2';
 import { ApiService } from './services/api.service';
 import { RemotelyComponent } from './remotely/remotely.component'
+import { AuthService } from './services/auth.service';
+import { CurrentUserService } from './services/current-user.service';
+import { RootLayoutComponent } from './root-layout/root-layout.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import { RemotelyComponent } from './remotely/remotely.component'
     OurStoryComponent,
     UserProfileComponent,
     NotFoundComponent,
-    RemotelyComponent
+    RemotelyComponent,
+    RootLayoutComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
@@ -35,46 +41,57 @@ import { RemotelyComponent } from './remotely/remotely.component'
     AppRoutingModule,
     RouterModule.forRoot([
       {
+        path: "sign-in",
+        component: SignInComponent
+      },
+      {
         path: "",
-        component: RootLandingComponent,
-
+        component: RootLayoutComponent,
+        children: [
+          {
+            path: "",
+            component: RootLandingComponent
+          },
+          {
+            path: "company",
+            component: AboutCompanyComponent
+          },
+          {
+            path: "privacy-policy",
+            component: PrivacyPolicyComponent
+          },
+          {
+            path: "terms",
+            component: TermsOfServiceComponent
+          },
+          {
+            path: "remotely",
+            component: RemotelyComponent
+          },
+          {
+            path: "our-story",
+            component: OurStoryComponent
+          },
+          {
+            path: "404",
+            component: NotFoundComponent
+          },
+          {
+            path: ":username",
+            component: UserProfileComponent
+          },
+          {
+            path: '**', redirectTo: '/404'
+          }
+        ]
       },
-      {
-        path: "company",
-        component: AboutCompanyComponent
-      },
-      {
-        path: "privacy-policy",
-        component: PrivacyPolicyComponent
-      },
-      {
-        path: "terms",
-        component: TermsOfServiceComponent
-      },
-      {
-        path: "remotely",
-        component: RemotelyComponent
-      },
-      {
-        path: "our-story",
-        component: OurStoryComponent
-      },
-      {
-        path: "404",
-        component: NotFoundComponent
-      },
-      {
-        path: ":username",
-        component: UserProfileComponent
-      },
-      {
-        path: '**', redirectTo: '/404'
-      }
     ]),
     Angulartics2Module.forRoot()
   ],
   providers: [
-    ApiService
+    ApiService,
+    AuthService,
+    CurrentUserService
   ],
   bootstrap: [AppComponent]
 })

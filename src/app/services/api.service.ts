@@ -73,7 +73,6 @@ export class ApiService {
 
   fetchUserPublicInfo(username: string): Observable<any> {
     const url = `${environment.superfit_workouts_base_uri}/v1/show/athletes/${username}`;
-    console.log(this.http);
 
     return this.http.get<any>(url)
       .pipe(

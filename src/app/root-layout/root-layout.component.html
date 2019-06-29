@@ -17,17 +17,17 @@
       <div class="collapse navbar-collapse justify-content-end">
         <div class="py-2 py-lg-0">
           <ul class="navbar-nav">
-            <li *ngIf="!(authService.isLoggedIn() | async)" class="nav-item">
+            <li hidden *ngIf="!(authService.isLoggedIn() | async)" class="nav-item">
               <a style="cursor: pointer;" class="nav-link" (click)="authService.signIn()">
                 Sign In
               </a>
             </li>
-            <li *ngIf="authService.isLoggedIn() | async" class="nav-item">
+            <li hidden *ngIf="authService.isLoggedIn() | async" class="nav-item">
               <a style="cursor: pointer;" class="nav-link" (click)="authService.signOut()">
                 Sign Out
               </a>
             </li>
-            <li class="nav-item">
+            <li hidden class="nav-item">
               <a href="/remotely" class="nav-link">For Coaches</a>
             </li>
             <li class="nav-item dropdown">

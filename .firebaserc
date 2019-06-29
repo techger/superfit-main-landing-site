@@ -1,7 +1,7 @@
 {
   "projects": {
     "production": "website-build-prod",
-    "staging": "superfit-staging-1e674"
+    "staging": "website-build-prod"
   },
   "targets": {
     "website-build-prod": {
@@ -11,10 +11,10 @@
         ]
       }
     },
-    "superfit-staging-1e674": {
+    "website-build-prod": {
       "hosting": {
         "main-website-staging": [
-          "main-website-staging"
+          "superfit-staging-landing"
         ]
       }
     }

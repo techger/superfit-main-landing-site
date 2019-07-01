@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "main-website-production",
+    "target": "main-website-staging",
     "public": "dist",
     "ignore": [
       "firebase.json",

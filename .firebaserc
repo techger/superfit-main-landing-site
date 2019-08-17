@@ -8,11 +8,7 @@
       "hosting": {
         "main-website-production": [
           "superfit"
-        ]
-      }
-    },
-    "website-build-prod": {
-      "hosting": {
+        ],
         "main-website-staging": [
           "superfit-staging-landing"
         ]

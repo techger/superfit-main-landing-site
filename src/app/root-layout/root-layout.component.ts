@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
 export class RootLayoutComponent implements OnInit {
 
   constructor(
-    private authService: AuthService
+    readonly authService: AuthService
   ) { }
 
   ngOnInit() {

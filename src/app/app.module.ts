@@ -65,7 +65,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
             component: TermsOfServiceComponent
           },
           {
-            path: "remotely",
+            path: "remote",
             component: RemotelyComponent
           },
           {

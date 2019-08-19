@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+declare var Beacon: any;
+
 
 @Component({
   selector: 'app-remotely',
@@ -12,4 +14,8 @@ export class RemotelyComponent implements OnInit {
   ngOnInit() {
   }
 
+  openLiveChat() {
+    Beacon("open");
+    Beacon("navigate", "/ask/chat/")
+  }
 }

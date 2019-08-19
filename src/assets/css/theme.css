@@ -10556,6 +10556,34 @@ svg.bg-primary-3-alt * {
 }
 
 @font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Medium.otf") format("opentype");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-SemiBold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-ExtraBold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
   font-family: 'Inter UI';
   font-style: normal;
   font-weight: 400;
@@ -10768,7 +10796,7 @@ strong {
 }
 
 section {
-  padding: 6rem 0;
+  padding: 4rem 0;
 }
 
 .h-0 {

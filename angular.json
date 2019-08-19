@@ -32,6 +32,7 @@
               "src/assets/js/jquery.countdown.min.js",
               "src/assets/js/jquery.smartWizard.min.js",
               "src/assets/js/aos.js",
+              "src/assets/js/svg-injector.umd.production.js",
               "src/assets/js/popper.min.js",
               "src/assets/js/bootstrap.js",
               "src/assets/js/flatpickr.min.js",

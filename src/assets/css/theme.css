@@ -29,7 +29,7 @@
   --light: #f8f9fa;
   --dark: #212529;
   --primary-2: #48BF84;
-  --primary-3: #303030;
+  --primary-3: #DD9E00;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -2446,14 +2446,14 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-primary-3 {
   color: #fff;
-  background-color: #303030;
-  border-color: #303030;
+  background-color: #DD9E00;
+  border-color: #DD9E00;
 }
 
 .btn-primary-3:hover {
   color: #fff;
-  background-color: #0f1121;
-  border-color: #0b0d18;
+  background-color: rgb(245, 182, 22);
+  border-color: rgb(245, 182, 22);
 }
 
 .btn-primary-3:focus, .btn-primary-3.focus {
@@ -2462,8 +2462,8 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-primary-3.disabled, .btn-primary-3:disabled {
   color: #fff;
-  background-color: #303030;
-  border-color: #303030;
+  background-color: rgb(192, 163, 90);
+  border-color: rgb(192, 163, 90);
 }
 
 .btn-primary-3:not(:disabled):not(.disabled):active, .btn-primary-3:not(:disabled):not(.disabled).active, .show>.btn-primary-3.dropdown-toggle {
@@ -2722,7 +2722,7 @@ a.btn.disabled, fieldset:disabled a.btn {
 }
 
 .btn-outline-primary-2:hover {
-  color: #212529;
+  color: #fff;
   background-color: #48BF84;
   border-color: #48BF84;
 }
@@ -2747,14 +2747,14 @@ a.btn.disabled, fieldset:disabled a.btn {
 }
 
 .btn-outline-primary-3 {
-  color: #303030;
-  border-color: #303030;
+  color: #DD9E00;
+  border-color: #DD9E00;
 }
 
 .btn-outline-primary-3:hover {
   color: #fff;
-  background-color: #303030;
-  border-color: #303030;
+  background-color: rgb(245, 182, 22);
+  border-color: rgb(245, 182, 22);
 }
 
 .btn-outline-primary-3:focus, .btn-outline-primary-3.focus {
@@ -2768,8 +2768,8 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-outline-primary-3:not(:disabled):not(.disabled):active, .btn-outline-primary-3:not(:disabled):not(.disabled).active, .show>.btn-outline-primary-3.dropdown-toggle {
   color: #fff;
-  background-color: #303030;
-  border-color: #303030;
+  background-color: #DD9E00;
+  border-color: #DD9E00;
 }
 
 .btn-outline-primary-3:not(:disabled):not(.disabled):active:focus, .btn-outline-primary-3:not(:disabled):not(.disabled).active:focus, .show>.btn-outline-primary-3.dropdown-toggle:focus {
@@ -4743,7 +4743,7 @@ a.badge-primary-2:focus, a.badge-primary-2.focus {
 
 .badge-primary-3 {
   color: #fff;
-  background-color: #303030;
+  background-color: #DD9E00;
 }
 
 a.badge-primary-3:hover, a.badge-primary-3:focus {
@@ -6261,7 +6261,7 @@ a.bg-primary-2:hover, a.bg-primary-2:focus, button.bg-primary-2:hover, button.bg
 }
 
 .bg-primary-3 {
-  background-color: #303030 !important;
+  background-color: #DD9E00 !important;
 }
 
 a.bg-primary-3:hover, a.bg-primary-3:focus, button.bg-primary-3:hover, button.bg-primary-3:focus {
@@ -6269,7 +6269,8 @@ a.bg-primary-3:hover, a.bg-primary-3:focus, button.bg-primary-3:hover, button.bg
 }
 
 .bg-white {
-  background-color: #F2EFE7 !important;
+  /* background-color: #F2EFE7 !important; */
+  background-color: white;
 }
 
 .bg-transparent {
@@ -6353,7 +6354,7 @@ a.bg-primary-3:hover, a.bg-primary-3:focus, button.bg-primary-3:hover, button.bg
 }
 
 .border-primary-3 {
-  border-color: #303030 !important;
+  border-color: #DD9E00 !important;
 }
 
 .border-white {
@@ -10539,7 +10540,7 @@ svg.bg-primary-2-alt * {
 }
 
 svg.bg-primary-3 * {
-  fill: #303030;
+  fill: #DD9E00;
 }
 
 svg.bg-primary-3-alt * {
@@ -14609,8 +14610,8 @@ https://flickity.metafizzy.co
 }
 
 .hover-bg-primary-3:hover {
-  background: #303030;
-  border-color: #303030;
+  background: #DD9E00;
+  border-color: #DD9E00;
   color: #fff;
 }
 
@@ -17530,7 +17531,7 @@ body.fade-page {
 }
 
 .process-circle.bg-primary-3:after {
-  background-color: #303030;
+  background-color: #DD9E00;
 }
 
 .process-vertical {

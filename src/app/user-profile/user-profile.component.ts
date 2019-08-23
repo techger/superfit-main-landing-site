@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { ApiService } from '../services/api.service';
 import { Phase_Response_V1, Journey_Template_Response_V1, Level } from 'superfitjs';
+
 
 @Component({
   selector: 'app-user-profile',
@@ -10,16 +11,19 @@ import { Phase_Response_V1, Journey_Template_Response_V1, Level } from 'superfit
 })
 export class UserProfileComponent implements OnInit {
   userPublicProfile?: any
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private readonly apiService: ApiService) { }
+    private readonly apiService: ApiService) {
+  }
 
   ngOnInit() {
     const username = this.route.snapshot.paramMap.get("username");
 
-    this.apiService.fetchUserPublicInfo(username)
-      .subscribe((userPublicProfile: any) => {
+    this.apiService
+      .fetchUserPublicInfo(username)
+      .subscribe((userPublicProfile) => {
 
         if (!userPublicProfile) {
           this.router.navigate(["/404"]);

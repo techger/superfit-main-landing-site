@@ -1,8 +1,8 @@
-<section class="has-divider">
+<section id="typed" class="has-divider">
   <div class="container" data-aos="fade-up">
     <div class="row align-items-center justify-content-around">
       <div class="col-md-5">
-        <img src="./assets/img/profile-pic.jpg" alt="Profile Image" class="rounded-circle layer-2">
+        <img [src]="userPublicProfile?.professional?.pictureUrl" alt="Profile Image" class="rounded-circle layer-2">
         <div class="decoration bottom left" data-aos="fade-up">
           <svg class="bg-primary" width="260" height="160" viewBox="0 0 260 160" fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -27,15 +27,12 @@
       </div>
       <div class="col-xl-5 col-md-6">
         <div class="pt-3 h1">
-          <div>Hi, I'm {{userPublicProfile?.firstName || 'on SuperFit'}},</div>
-          <span>A </span>
+          <div>Hi, I'm {{userPublicProfile?.professional.name || 'on SuperFit'}},</div>
           <div class="highlight">
-            <span data-typed-text data-loop="true" data-type-speed="50"
-              data-strings='["strength coach","basketball player","running enthusiast","software developer"]'></span>.
+            {{userPublicProfile?.professional?.title || 'a Coach'}}.
           </div>
         </div>
         <p class="lead">{{userPublicProfile?.professional?.shortDescription}}</p>
-
         <div class="row mb-2">
           <div class="col-auto">
             <ul class="nav">
@@ -142,7 +139,7 @@
 
             </div>
             <span>
-              <span class="font-weight-bold">{{ journeyTemplate.level}}:
+              <span class="font-weight-bold">{{ journeyTemplate.level | titlecase}}:
               </span>{{experienceLevelText(journeyTemplate)}}</span>
           </li>
 

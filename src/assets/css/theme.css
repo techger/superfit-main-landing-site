@@ -364,7 +364,7 @@ h6, .h6 {
 
 .lead {
   font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .display-1 {
@@ -10692,7 +10692,7 @@ strong {
 
 .highlight {
   display: inline;
-  background: rgba(255, 142, 136, 0.2);
+  background: rgba(0, 124, 112, 0.15)
 }
 
 .alert {

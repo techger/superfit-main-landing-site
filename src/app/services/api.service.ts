@@ -10,8 +10,8 @@ import {
   Journey_Template_Response_V1,
   IAthlete_Response_V1,
   ISignInDTO_V1,
+  IAthletePublicInfo
 } from "superfitjs";
-import { tap } from "rxjs/operators";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "../../environments/environment";
 
@@ -71,15 +71,9 @@ export class ApiService {
     });
   }
 
-  fetchUserPublicInfo(username: string): Observable<IAthlete_Response_V1> {
+  fetchUserPublicInfo(username: string): Observable<IAthletePublicInfo> {
     const url = `${environment.superfit_workouts_base_uri}/v1/show/athletes/${username}`;
-
-    return this.http.get<IAthlete_Response_V1>(url)
-      .pipe(
-        tap(x => {
-          console.log(x);
-        }),
-      )
+    return this.http.get<IAthletePublicInfo>(url)
   }
 
   fetchOne<T>(url: string): Observable<T | undefined> {

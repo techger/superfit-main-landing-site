@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { ApiService } from '../services/api.service';
-import { Phase_Response_V1, Journey_Template_Response_V1, Level } from 'superfitjs';
+import { Phase_Response_V1, Journey_Template_Response_V1, Level, IAthletePublicInfo, IProPublicInfo } from 'superfitjs';
+import { Observable, of, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -10,32 +13,33 @@ import { Phase_Response_V1, Journey_Template_Response_V1, Level } from 'superfit
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-  userPublicProfile?: any
+  userPublicProfile$: Observable<IAthletePublicInfo>
+  professionalProfile$: Observable<IProPublicInfo>
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private readonly apiService: ApiService) {
+
+    const username = this.route.snapshot.paramMap.get("username");
+    console.log('here');
+
+    this.userPublicProfile$ = this.apiService
+      .fetchUserPublicInfo(username)
+      .pipe(
+        tap(x => {
+          console.log(x);
+        }),
+        catchError(error => {
+          console.log('error');
+          this.router.navigate(["/404"]);
+          return throwError(error)
+        }))
+
+    this.professionalProfile$ = this.userPublicProfile$.pipe(map(athleteProfile => athleteProfile.proProfile))
   }
 
   ngOnInit() {
-    const username = this.route.snapshot.paramMap.get("username");
-
-    this.apiService
-      .fetchUserPublicInfo(username)
-      .subscribe((userPublicProfile) => {
-
-        if (!userPublicProfile) {
-          this.router.navigate(["/404"]);
-          return
-        }
-
-        this.userPublicProfile = userPublicProfile
-
-      }, (error: any) => {
-        console.log(error);
-        this.router.navigate(["/404"]);
-      })
   }
 
   sortedPhasesByOrder(phases: Phase_Response_V1[]): Phase_Response_V1[] {

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { IAthlete_Response_V1 } from "superfitjs";
+import { IAthlete_Response_V1, IAthletePublicInfo } from "superfitjs";
 import { Observable, throwError, of } from "rxjs";
 import { environment } from "../../environments/environment";
 import { ApiService } from "../services/api.service";

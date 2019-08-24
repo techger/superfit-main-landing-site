@@ -99,14 +99,13 @@
 
     <div class="container">
 
-      <div *ngIf="proProfile.journeyTemplates?.length == 0" class="row justify-content-center text-center mb-5">
+      <div *ngIf="plans?.length == 0" class="row justify-content-center text-center mb-5">
         <p>
           No public journeys at the moment.
         </p>
       </div>
 
-      <div *ngFor="let journeyTemplate of proProfile.journeyTemplates;let i = index"
-        class="row justify-content-between align-items-center my-2">
+      <div *ngFor="let plan of plans;let i = index" class="row justify-content-between align-items-center my-2">
         <div class="col-md-5 col-lg-6 mb-4 mb-md-0" data-aos="fade-right">
 
           <div class="row justify-content-center">
@@ -118,16 +117,16 @@
                 <div
                   style="position:absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.2);">
                 </div>
-                <img src="{{journeyTemplate.mainImageUrl}}" alt="Image" class="jarallax-img">
+                <img src="{{plan.mainImageUrl}}" alt="Image" class="jarallax-img">
 
                 <div class="icon-round icon-round-sm">
                   <!-- <span class="align-content-center" style="font-size: 1.3em;">🚀</span> -->
                 </div>
-                <span class="badge bg-primary-2 text-light">{{journeyTemplate.phases.length}} Phases</span>
+                <span class="badge bg-primary-2 text-light">{{plan.phases.length}} Phases</span>
                 <div class="pt-2" style="z-index: 1;">
-                  <h3>{{journeyTemplate.title}}</h3>
+                  <h3>{{plan.title}}</h3>
                   <p class="lead">
-                    {{journeyTemplate.sport  | titlecase }} Training Plan
+                    {{plan.sport | titlecase }} Training Plan
                   </p>
                 </div>
 
@@ -136,8 +135,8 @@
           </div>
         </div>
         <div class="col-md-6" data-aos="fade">
-          <h3 class="h1">{{journeyTemplate.title}}</h3>
-          <p class="lead">{{journeyTemplate.shortDescription}}</p>
+          <h3 class="h1">{{plan.title}}</h3>
+          <p class="lead">{{plan.shortDescription}}</p>
           <ul class="list-unstyled mb-0">
             <li class=" d-flex py-2">
               <div class="icon-round icon-round-xs bg-primary-2 mr-2">
@@ -150,8 +149,8 @@
 
               </div>
               <span>
-                <span class="font-weight-bold">{{ journeyTemplate.level | titlecase}}:
-                </span>{{experienceLevelText(journeyTemplate)}}</span>
+                <span class="font-weight-bold">{{ plan.level | titlecase}}:
+                </span>{{experienceLevelText(plan)}}</span>
             </li>
 
             <li class=" d-flex py-2">
@@ -165,9 +164,9 @@
 
               </div>
               <span
-                class="font-weight-bold">{{journeyTemplate.accessLevel == "free" ? 'Free' : "Available on SuperFit Pro"}}</span>
+                class="font-weight-bold">{{plan.accessLevel == "free" ? 'Free' : "Available on SuperFit Pro"}}</span>
             </li>
-            <!-- <li *ngFor="let phase of sortedPhasesByOrder(journeyTemplate.phases)" class=" d-flex py-2">
+            <!-- <li *ngFor="let phase of sortedPhasesByOrder(plan.phases)" class=" d-flex py-2">
             <div class="icon-round icon-round-xs bg-primary-2 mr-2">
               <svg class="icon bg-primary-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">

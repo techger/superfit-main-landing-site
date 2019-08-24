@@ -76,6 +76,20 @@ export class ApiService {
     return this.http.get<IAthletePublicInfo>(url)
   }
 
+  fetchPublicProPlans(
+    username: string,
+    offset: number,
+    take: number = 5
+  ): Observable<Journey_Template_Response_V1[]> {
+    const url = `${environment.superfit_workouts_base_uri}/v1/show/professionals/${username}/plans`;
+    return this.http.get<Journey_Template_Response_V1[]>(url, {
+      params: {
+        offset: offset.toString(),
+        take: take.toString()
+      }
+    })
+  }
+
   fetchOne<T>(url: string): Observable<T | undefined> {
     const headers = this.requestHeaders();
     return this.http.get<T>(url, { headers: headers });

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { ApiService } from '../services/api.service';
 import { Phase_Response_V1, Journey_Template_Response_V1, Level, IAthletePublicInfo, IProPublicInfo } from 'superfitjs';
-import { Observable, of, throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
 
@@ -13,25 +13,32 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
+  private username?: string
   userPublicProfile$: Observable<IAthletePublicInfo>
   professionalProfile$: Observable<IProPublicInfo>
+  plans: Journey_Template_Response_V1[] = []
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private readonly apiService: ApiService) {
 
-    const username = this.route.snapshot.paramMap.get("username");
-    console.log('here');
+    this.username = this.route.snapshot.paramMap.get("username");
+
+    if (!this.username) {
+      this.router.navigate(["/404"]);
+      return
+    }
 
     this.userPublicProfile$ = this.apiService
-      .fetchUserPublicInfo(username)
+      .fetchUserPublicInfo(this.username)
       .pipe(
-        tap(x => {
-          console.log(x);
+        tap(profile => {
+          if (profile.proProfile) {
+            this.fetchPlans()
+          }
         }),
         catchError(error => {
-          console.log('error');
           this.router.navigate(["/404"]);
           return throwError(error)
         }))
@@ -52,6 +59,15 @@ export class UserProfileComponent implements OnInit {
     }
 
     return `Phase ${phase.order + 1}`
+  }
+
+  fetchPlans() {
+    this.apiService.fetchPublicProPlans(this.username, this.plans.length, 5)
+      .subscribe(plans => {
+        this.plans = this.plans.concat(plans)
+      }, error => {
+        throw error
+      })
   }
 
   // first sentence

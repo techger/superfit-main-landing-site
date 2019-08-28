@@ -12,11 +12,10 @@ import { environment } from 'src/environments/environment';
 export class AppComponent {
   title = 'SuperFit';
   constructor(
-    private router: Router,
     private angulartics2: Angulartics2,
     private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics
   ) {
-    angulartics2.settings.developerMode = !environment.production
-    angulartics2GoogleAnalytics.startTracking()
+    this.angulartics2.settings.developerMode = !environment.production
+    this.angulartics2GoogleAnalytics.startTracking()
   }
 }

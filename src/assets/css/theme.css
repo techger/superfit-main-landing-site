@@ -2165,8 +2165,8 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #2e48a0;
-  border-color: #2c4396;
+  background-color: rgb(0, 102, 92);
+  border-color: rgb(0, 102, 92);
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -2421,8 +2421,8 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-primary-2:hover {
   color: #fff;
-  background-color: #ff6a62;
-  border-color: #ff5e55;
+  background-color: #48BF84;
+  border-color: rgb(54, 143, 98);
 }
 
 .btn-primary-2:focus, .btn-primary-2.focus {
@@ -2437,7 +2437,7 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-primary-2:not(:disabled):not(.disabled):active, .btn-primary-2:not(:disabled):not(.disabled).active, .show>.btn-primary-2.dropdown-toggle {
   color: #fff;
-  background-color: #ff5e55;
+  background-color: rgb(54, 143, 98);
   border-color: #ff5148;
 }
 
@@ -4734,7 +4734,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 a.badge-primary-2:hover, a.badge-primary-2:focus {
   color: #212529;
-  background-color: #ff5e55;
+  background-color: rgb(54, 143, 98);
 }
 
 a.badge-primary-2:focus, a.badge-primary-2.focus {
@@ -6258,7 +6258,7 @@ a.bg-dark:hover, a.bg-dark:focus, button.bg-dark:hover, button.bg-dark:focus {
 }
 
 a.bg-primary-2:hover, a.bg-primary-2:focus, button.bg-primary-2:hover, button.bg-primary-2:focus {
-  background-color: #ff5e55 !important;
+  background-color: rgb(54, 143, 98) !important;
 }
 
 .bg-primary-3 {

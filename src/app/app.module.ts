@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
-import { AboutCompanyComponent } from './about-company/about-company.component';
 import { RouterModule } from '@angular/router';
 import { RootLandingComponent } from './root-landing/root-landing.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
@@ -19,11 +18,11 @@ import { AuthService } from './services/auth.service';
 import { CurrentUserService } from './services/current-user.service';
 import { RootLayoutComponent } from './root-layout/root-layout.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { SEOService } from './services/seo.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutCompanyComponent,
     RootLandingComponent,
     PrivacyPolicyComponent,
     TermsOfServiceComponent,
@@ -50,11 +49,12 @@ import { SignInComponent } from './sign-in/sign-in.component';
         children: [
           {
             path: "",
-            component: RootLandingComponent
-          },
-          {
-            path: "company",
-            component: AboutCompanyComponent
+            component: RootLandingComponent,
+            data: {
+              title: 'SuperFit - Workout Mobile App',
+              description: 'The best workout app for people who play sports.',
+              ogUrl: 'https://www.superfitapp.com'
+            }
           },
           {
             path: "privacy-policy",
@@ -65,8 +65,13 @@ import { SignInComponent } from './sign-in/sign-in.component';
             component: TermsOfServiceComponent
           },
           {
-            path: "remote",
-            component: RemotelyComponent
+            path: "workout-spreadsheet",
+            component: RemotelyComponent,
+            data: {
+              title: 'Workout Spreadsheet',
+              description: 'Create a Workout Plan & Share It. for the online personal trainer and fitness coach.',
+              ogUrl: 'https://www.superfitapp.com/workout-spreadsheet'
+            }
           },
           {
             path: "our-story",
@@ -91,7 +96,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
   providers: [
     ApiService,
     AuthService,
-    CurrentUserService
+    CurrentUserService,
+    SEOService
   ],
   bootstrap: [AppComponent]
 })

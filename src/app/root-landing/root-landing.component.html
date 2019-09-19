@@ -3,12 +3,11 @@
     <div class="row align-items-center justify-content-between">
       <div class="col-lg-6 col-xl-5 text-center px-md-6 px-lg-0">
         <span class="badge badge-pill badge-primary-2 text-white">Workouts Mobile App</span>
-        <h1 class="display-4">A sports and fitness training app for all athletes.</h1>
-        <p class="lead">
-          Whatever level you’re at, we’ll meet you there.
-        </p>
+        <h1 class="display-4">The best workout app for people who play sports.</h1>
         <a href="https://itunes.apple.com/us/app/superfit-sports-workouts/id1225772126"
-          class="btn btn-primary-3 btn-lg mt-3">Download for iOS</a>
+          class="btn btn-primary-3 btn-lg mt-3" angulartics2On="click" angularticsAction="DownloadClickHomePage"
+          angularticsLabel="downloadButton" angularticsValue="downloadForiOS"
+          [angularticsProperties]="{'location': 'Home Page'}"> Download for iOS</a>
       </div>
       <div class="col-lg-6">
         <div class="row justify-content-center">
@@ -112,15 +111,14 @@
         <div class="process-circle bg-primary-2 mb-3"></div>
         <h3>Learn a New Sport</h3>
         <p>
-          Or continue to improve on what you enjoy. We want to make sports and fitness more
-          approachable and open to everyone.
+          Currently we have free basketball drills, soccer drills and strength training for runners.
         </p>
       </div>
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
         <div class="process-circle bg-primary-3 mb-3"></div>
         <h3>Follow a Guided Workout</h3>
         <p>
-          Follow a guided routine when you workout & see just how efficient you can be in the gym.
+          Save time and finish your workouts faster in the gym.
         </p>
       </div>
     </div>

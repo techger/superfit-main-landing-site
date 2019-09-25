@@ -19,6 +19,7 @@ import { CurrentUserService } from './services/current-user.service';
 import { RootLayoutComponent } from './root-layout/root-layout.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SEOService } from './services/seo.service';
+import { UGCTermsComponent } from './ugcterms/ugcterms.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SEOService } from './services/seo.service';
     TermsOfServiceComponent,
     OurStoryComponent,
     UserProfileComponent,
+    UGCTermsComponent,
     NotFoundComponent,
     RemotelyComponent,
     RootLayoutComponent,
@@ -63,6 +65,10 @@ import { SEOService } from './services/seo.service';
           {
             path: "terms",
             component: TermsOfServiceComponent
+          },
+          {
+            path: "ugc-terms",
+            component: UGCTermsComponent
           },
           {
             path: "workout-spreadsheet",

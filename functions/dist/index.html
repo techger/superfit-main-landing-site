@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SuperFit - Sports Workout App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Helping people of all experience levels meet their sports goals.">
+
+  <base href="/" />
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5V6J7GG');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Plyr (unified player for Video, Audio, Vimeo and Youtube) -->
+  <script type="text/javascript" src="assets/js/plyr.polyfilled.min.js"></script>
+
+  <!-- Beacon -->
+  <script
+    type="text/javascript">!function (e, t, n) { function a() { var e = t.getElementsByTagName("script")[0], n = t.createElement("script"); n.type = "text/javascript", n.async = !0, n.src = "https://beacon-v2.helpscout.net", e.parentNode.insertBefore(n, e) } if (e.Beacon = n = function (t, n, a) { e.Beacon.readyQueue.push({ method: t, options: n, data: a }) }, n.readyQueue = [], "complete" === t.readyState) return a(); e.attachEvent ? e.attachEvent("onload", a) : e.addEventListener("load", a, !1) }(window, document, window.Beacon || function () { });</script>
+  <script type="text/javascript">window.Beacon('init', '76a903f2-68f3-4a00-91a5-36c7e7c1f473')</script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142126909-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-142126909-2');
+  </script>
+
+  <!-- FS -->
+  <script>
+    window['_fs_debug'] = false;
+    window['_fs_host'] = 'fullstory.com';
+    window['_fs_org'] = 'F8GKJ';
+    window['_fs_namespace'] = 'FS';
+    (function (m, n, e, t, l, o, g, y) {
+      if (e in m) { if (m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); } return; }
+      g = m[e] = function (a, b, s) { g.q ? g.q.push([a, b, s]) : g._api(a, b, s); }; g.q = [];
+      o = n.createElement(t); o.async = 1; o.crossOrigin = 'anonymous'; o.src = 'https://' + _fs_host + '/s/fs.js';
+      y = n.getElementsByTagName(t)[0]; y.parentNode.insertBefore(o, y);
+      g.identify = function (i, v, s) { g(l, { uid: i }, s); if (v) g(l, v, s) }; g.setUserVars = function (v, s) { g(l, v, s) }; g.event = function (i, v, s) { g('event', { n: i, p: v }, s) };
+      g.shutdown = function () { g("rec", !1) }; g.restart = function () { g("rec", !0) };
+      g.log = function (a, b) { g("log", [a, b]) };
+      g.consent = function (a) { g("consent", !arguments.length || a) };
+      g.identifyAccount = function (i, v) { o = 'account'; v = v || {}; v.acctId = i; g(o, v) };
+      g.clearUserCookie = function () { };
+    })(window, document, window['_fs_namespace'], 'script', 'user');
+  </script>
+<link rel="stylesheet" href="styles.dc93ab56dcdd69a615d7.css"></head>
+
+
+<body data-smooth-scroll-offset="73">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5V6J7GG" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="loader">
+    <div class="loading-animation"></div>
+  </div>
+
+  <app-root></app-root>
+
+  <!-- Removes page load animation when window is finished loading -->
+  <script type="text/javascript">
+    window.addEventListener("load", function () {
+      document.querySelector('body').classList.add('loaded');
+    });
+  </script>
+
+<script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="es2015-polyfills.b62a0c6b168f504c432e.js" nomodule></script><script type="text/javascript" src="polyfills.8bbb231b43165d65d357.js"></script><script type="text/javascript" src="scripts.41172f1b6ae51a8ead20.js"></script><script type="text/javascript" src="main.32cf5a0f4d5b749a7b50.js"></script></body>
+
+</html>

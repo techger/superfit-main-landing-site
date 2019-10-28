@@ -1,0 +1,9 @@
+.square {
+  position: relative;
+}
+
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}

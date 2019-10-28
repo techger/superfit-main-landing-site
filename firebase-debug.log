@@ -1,0 +1,136 @@
+[debug] [2019-10-28T19:12:46.184Z] ----------------------------------------------------------------------
+[debug] [2019-10-28T19:12:46.186Z] Command:       /Users/leokwan/.nvm/versions/node/v10.15.3/bin/node /Users/leokwan/.nvm/versions/node/v10.15.3/bin/firebase serve
+[debug] [2019-10-28T19:12:46.186Z] CLI Version:   7.0.2
+[debug] [2019-10-28T19:12:46.187Z] Platform:      darwin
+[debug] [2019-10-28T19:12:46.187Z] Node Version:  v10.15.3
+[debug] [2019-10-28T19:12:46.187Z] Time:          Mon Oct 28 2019 15:12:46 GMT-0400 (Eastern Daylight Time)
+[debug] [2019-10-28T19:12:46.187Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-28T19:12:46.195Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-28T19:12:46.195Z] > authorizing via signed-in user
+[debug] [2019-10-28T19:12:46.195Z] [iam] checking project website-build-prod for permissions ["firebase.projects.get"]
+[debug] [2019-10-28T19:12:46.197Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/website-build-prod:testIamPermissions  
+
+[debug] [2019-10-28T19:12:46.522Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-28T19:12:46.524Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/website-build-prod  
+ 
+[debug] [2019-10-28T19:12:46.763Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/leokwan/Development/landing-website-superfit'...
+[info] 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "10"
+[debug] [2019-10-28T19:12:46.774Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/448827987165/clients/_:getWebAppConfig  
+ 
+[debug] [2019-10-28T19:12:46.775Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/448827987165:getServerAppConfig  
+ 
+[debug] [2019-10-28T19:12:46.963Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2019-10-28T19:12:47.121Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/leokwan/Development/landing-website-superfit/functions" for Cloud Functions...
+[info] i  hosting[main-website-production]: Serving hosting files from: dist/browser
+[info] ✔  hosting[main-website-production]: Local server: http://localhost:5000
+[debug] [2019-10-28T19:12:47.403Z] Functions runtime initialized.
+[debug] [2019-10-28T19:12:47.404Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2019-10-28T19:12:47.487Z] firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/Users/leokwan/.nvm/versions/node/v10.15.3/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:278:24)
+    at Object.httpsProvider.onRequest (/Users/leokwan/.nvm/versions/node/v10.15.3/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:283:34)
+    at Object.<anonymous> (/Users/leokwan/Development/landing-website-superfit/functions/lib/index.js:5:31)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[info] [hosting] Rewriting /assets/img/article-5.jpg to http://localhost:5001/website-build-prod/us-central1/ssr for local Function ssr
+[debug] [2019-10-28T19:13:22.774Z] Accepted request GET /website-build-prod/us-central1/ssr/assets/img/article-5.jpg --> ssr
+[debug] [2019-10-28T19:13:23.139Z] Functions runtime initialized.
+[info] i  functions: Beginning execution of "ssr"
+[debug] [2019-10-28T19:13:23.140Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2019-10-28T19:13:23.212Z] firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/Users/leokwan/.nvm/versions/node/v10.15.3/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:278:24)
+    at Object.httpsProvider.onRequest (/Users/leokwan/.nvm/versions/node/v10.15.3/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:283:34)
+    at Object.<anonymous> (/Users/leokwan/Development/landing-website-superfit/functions/lib/index.js:5:31)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2019-10-28T19:15:37.212Z] ----------------------------------------------------------------------
+[debug] [2019-10-28T19:15:37.213Z] Command:       /Users/leokwan/.nvm/versions/node/v10.15.3/bin/node /Users/leokwan/.nvm/versions/node/v10.15.3/bin/firebase serve
+[debug] [2019-10-28T19:15:37.214Z] CLI Version:   7.0.2
+[debug] [2019-10-28T19:15:37.214Z] Platform:      darwin
+[debug] [2019-10-28T19:15:37.214Z] Node Version:  v10.15.3
+[debug] [2019-10-28T19:15:37.214Z] Time:          Mon Oct 28 2019 15:15:37 GMT-0400 (Eastern Daylight Time)
+[debug] [2019-10-28T19:15:37.214Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-28T19:15:37.225Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-28T19:15:37.225Z] > authorizing via signed-in user
+[debug] [2019-10-28T19:15:37.226Z] [iam] checking project website-build-prod for permissions ["firebase.projects.get"]
+[debug] [2019-10-28T19:15:37.227Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/website-build-prod:testIamPermissions  
+
+[debug] [2019-10-28T19:15:37.514Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-28T19:15:37.516Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/website-build-prod  
+ 
+[debug] [2019-10-28T19:15:37.746Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/leokwan/Development/landing-website-superfit'...
+[info] 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "10"
+[debug] [2019-10-28T19:15:37.757Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/448827987165/clients/_:getWebAppConfig  
+ 
+[debug] [2019-10-28T19:15:37.758Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/448827987165:getServerAppConfig  
+ 
+[debug] [2019-10-28T19:15:37.911Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2019-10-28T19:15:38.051Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/leokwan/Development/landing-website-superfit/functions" for Cloud Functions...
+[info] i  hosting[main-website-production]: Serving hosting files from: dist/browser
+[info] ✔  hosting[main-website-production]: Local server: http://localhost:5000
+[debug] [2019-10-28T19:15:38.340Z] Functions runtime initialized.
+[debug] [2019-10-28T19:15:38.340Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2019-10-28T19:15:38.448Z] firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/Users/leokwan/.nvm/versions/node/v10.15.3/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:278:24)
+    at Object.httpsProvider.onRequest (/Users/leokwan/.nvm/versions/node/v10.15.3/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:283:34)
+    at Object.<anonymous> (/Users/leokwan/Development/landing-website-superfit/functions/lib/index.js:5:31)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[info] [hosting] Rewriting /assets/img/article-5.jpg to http://localhost:5001/website-build-prod/us-central1/ssr for local Function ssr
+[debug] [2019-10-28T19:15:50.839Z] Accepted request GET /website-build-prod/us-central1/ssr/assets/img/article-5.jpg --> ssr
+[debug] [2019-10-28T19:15:51.198Z] Functions runtime initialized.
+[info] i  functions: Beginning execution of "ssr"
+[debug] [2019-10-28T19:15:51.199Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2019-10-28T19:15:51.278Z] firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/Users/leokwan/.nvm/versions/node/v10.15.3/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:278:24)
+    at Object.httpsProvider.onRequest (/Users/leokwan/.nvm/versions/node/v10.15.3/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:283:34)
+    at Object.<anonymous> (/Users/leokwan/Development/landing-website-superfit/functions/lib/index.js:5:31)
+    at Module._compile (internal/modules/cjs/loader.js:701:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+    at Module.load (internal/modules/cjs/loader.js:600:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.

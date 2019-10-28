@@ -15,6 +15,7 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
+    "build:ssr-firebase": "npm run build:ssr && npm --prefix functions/ run build",
     "build:client-and-server-bundles": "ng build --prod && ng run superfit-landing-website:server:production"
   },
   "private": true,

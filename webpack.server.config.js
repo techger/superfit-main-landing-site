@@ -17,8 +17,15 @@ module.exports = {
   output: {
     // Puts the output at the root of the dist folder
     path: path.join(__dirname, 'dist'),
+    library: 'app',
+    // Export a UMD of the webpacked server.ts & dependencies for rendering in Cloud Functions
+    libraryTarget: 'umd',
     filename: '[name].js'
   },
+  externals: [
+    // Firebase has some troubles being webpacked when it's in the Node environment, so we will skip it.
+    /^firebase/
+  ],
   module: {
     rules: [
       { test: /\.ts$/, loader: 'ts-loader' },

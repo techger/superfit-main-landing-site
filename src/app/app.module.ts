@@ -14,7 +14,6 @@ import { NotFoundComponent } from './not-found/not-found.component'
 import { Angulartics2Module } from 'angulartics2';
 import { ApiService } from './services/api.service';
 import { RemotelyComponent } from './remotely/remotely.component'
-import { AuthService } from './services/auth.service';
 import { CurrentUserService } from './services/current-user.service';
 import { RootLayoutComponent } from './root-layout/root-layout.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -36,7 +35,7 @@ import { UGCTermsComponent } from './ugcterms/ugcterms.component';
     SignInComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     NoopAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
@@ -101,7 +100,6 @@ import { UGCTermsComponent } from './ugcterms/ugcterms.component';
   ],
   providers: [
     ApiService,
-    AuthService,
     CurrentUserService,
     SEOService
   ],

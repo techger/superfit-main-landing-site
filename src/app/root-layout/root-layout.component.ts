@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-root-layout',
@@ -9,7 +8,6 @@ import { AuthService } from '../services/auth.service';
 export class RootLayoutComponent implements OnInit {
 
   constructor(
-    readonly authService: AuthService
   ) { }
 
   ngOnInit() {

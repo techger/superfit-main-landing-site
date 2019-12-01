@@ -5,7 +5,8 @@ import { Phase_Response_V1, Journey_Template_Response_V1, Level, IAthletePublicI
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
-
+import { UIStateService } from '../services/ui-state.service';
+declare var Beacon: any;
 
 @Component({
   selector: 'app-user-profile',
@@ -21,8 +22,10 @@ export class UserProfileComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private readonly apiService: ApiService) {
-
+    private readonly apiService: ApiService,
+    private readonly uiState: UIStateService
+  ) {
+    uiState.showNavigation = false
     this.username = this.route.snapshot.paramMap.get("username");
 
     if (!this.username) {
@@ -47,6 +50,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   sortedPhasesByOrder(phases: Phase_Response_V1[]): Phase_Response_V1[] {

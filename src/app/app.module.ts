@@ -20,6 +20,8 @@ import { RootLayoutComponent } from './root-layout/root-layout.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SEOService } from './services/seo.service';
 import { UGCTermsComponent } from './ugcterms/ugcterms.component';
+import { DefaultNavigationComponent } from './default-navigation/default-navigation.component';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { UGCTermsComponent } from './ugcterms/ugcterms.component';
     NoopAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    SharedModule,
     RouterModule.forRoot([
       {
         path: "sign-in",
@@ -54,7 +57,7 @@ import { UGCTermsComponent } from './ugcterms/ugcterms.component';
             component: RootLandingComponent,
             data: {
               title: 'SuperFit - Workout Mobile App',
-              description: 'The best workout app for people who play sports.',
+              description: 'Curated Workout Plans for common fitness goals.',
               ogUrl: 'https://www.superfitapp.com'
             }
           },
@@ -75,8 +78,17 @@ import { UGCTermsComponent } from './ugcterms/ugcterms.component';
             component: RemotelyComponent,
             data: {
               title: 'Workout Spreadsheet',
-              description: 'Create a Workout Plan & Share It. for the online personal trainer and fitness coach.',
+              description: 'Add Online Coaching to your Personal Training. For Independent trainers and fitness professionals',
               ogUrl: 'https://www.superfitapp.com/workout-spreadsheet'
+            }
+          },
+          {
+            path: "online-coaching",
+            component: RemotelyComponent,
+            data: {
+              title: 'For Professionals',
+              description: 'Add Online Coaching to your Personal Training. For Independent trainers and fitness professionals.',
+              ogUrl: 'https://www.superfitapp.com/online-coaching'
             }
           },
           {

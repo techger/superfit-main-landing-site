@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { UIStateService, NavigationConfig } from '../services/ui-state.service';
 
 @Component({
   selector: 'app-default-navigation',
@@ -7,9 +8,10 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./default-navigation.component.css']
 })
 export class DefaultNavigationComponent implements OnInit {
-  webAppLink: string
-  constructor() {
-    this.webAppLink = environment.app_base_uri
+  @Input() navConfig: NavigationConfig
+
+  constructor(uiState: UIStateService) {
+    this.navConfig = uiState.navConfig
   }
 
   ngOnInit() {

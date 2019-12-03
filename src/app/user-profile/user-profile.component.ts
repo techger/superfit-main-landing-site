@@ -15,7 +15,7 @@ declare var Beacon: any;
 })
 export class UserProfileComponent implements OnInit {
   private username?: string
-  userPublicProfile$: Observable<IAthletePublicInfo>
+  private userPublicProfile$: Observable<IAthletePublicInfo>
   professionalProfile$: Observable<IProPublicInfo>
   plans: Journey_Template_Response_V1[] = []
 
@@ -25,7 +25,7 @@ export class UserProfileComponent implements OnInit {
     private readonly apiService: ApiService,
     private readonly uiState: UIStateService
   ) {
-    uiState.showNavigation = false
+    this.uiState.showNavigation = false
     this.username = this.route.snapshot.paramMap.get("username");
 
     if (!this.username) {
@@ -61,7 +61,6 @@ export class UserProfileComponent implements OnInit {
     if (phase.title) {
       return phase.title
     }
-
     return `Phase ${phase.order + 1}`
   }
 

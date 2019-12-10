@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { environment } from '../../environments/environment';
 declare var Beacon: any;
 
 
@@ -8,8 +9,10 @@ declare var Beacon: any;
   styleUrls: ['./remotely.component.css']
 })
 export class RemotelyComponent implements OnInit {
-
-  constructor() { }
+  @Input() webAppLink: string
+  constructor() {
+    this.webAppLink = `${environment.app_base_uri}/remote/pricing`
+  }
 
   ngOnInit() {
   }

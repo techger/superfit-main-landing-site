@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { RootLayoutComponent } from './root-layout/root-layout.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { UGCTermsComponent } from './ugcterms/ugcterms.component';
@@ -10,9 +9,8 @@ import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.com
 import { OurStoryComponent } from './our-story/our-story.component';
 import { UserProfileComponent } from './user-profile/user-profile.component'
 import { NotFoundComponent } from './not-found/not-found.component'
-import { DefaultNavigationComponent } from './default-navigation/default-navigation.component';
-import { SharedModule } from './modules/shared/shared.module';
 import { TrainingPlanTemplateComponent } from './remote/training-plan-template/training-plan-template.component';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -88,7 +86,9 @@ import { TrainingPlanTemplateComponent } from './remote/training-plan-template/t
           }
         ]
       }
-    ])
+    ], {
+      preloadingStrategy: PreloadAllModules
+    })
   ],
   exports: [RouterModule],
   declarations: [

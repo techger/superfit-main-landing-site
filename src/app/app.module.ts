@@ -4,15 +4,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
-
 import { Angulartics2Module } from 'angulartics2';
 import { ApiService } from './services/api.service';
-
 import { AuthService } from './services/auth.service';
 import { CurrentUserService } from './services/current-user.service';
 import { SEOService } from './services/seo.service';
 import { RemotelyComponent } from './remote/remotely.component'
-import { RouterModule } from '@angular/router';
 import { RootLandingComponent } from './root-landing/root-landing.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';

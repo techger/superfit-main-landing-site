@@ -9,9 +9,11 @@ import { UIStateService, NavigationConfig } from '../services/ui-state.service';
 })
 export class DefaultNavigationComponent implements OnInit {
   @Input() navConfig: NavigationConfig
+  @Input() webAppLink: string
 
   constructor(uiState: UIStateService) {
     this.navConfig = uiState.navConfig
+    this.webAppLink = environment.app_base_uri
   }
 
   ngOnInit() {

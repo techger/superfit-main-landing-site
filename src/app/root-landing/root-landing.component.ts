@@ -21,7 +21,7 @@ export class RootLandingComponent implements OnInit {
     this.uiState.navConfig = {
       navType: NavigationType.HomePage,
       ctaText: "Download iOS App",
-      ctaUrl: environment.app_base_uri,
+      ctaUrl: "https://itunes.apple.com/us/app/superfit-sports-workouts/id1225772126",
       activeTab: NavigationTab.Workouts
     }
   }

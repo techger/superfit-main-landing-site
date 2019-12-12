@@ -15,6 +15,7 @@ export class LazyImageDirective implements OnInit {
     if (this.element.nativeElement.tagName.toLowerCase() != 'img') {
       console.warn(`The directive ${this} only supports an img element`);
     }
+    this.renderer.addClass(this.element.nativeElement, "loading-animation")
   }
 
   ngAfterViewInit(): void {
@@ -31,6 +32,7 @@ export class LazyImageDirective implements OnInit {
             'src',
             this.imageSource
           );
+          this.renderer.removeClass(this.element.nativeElement, "loading-animation")
           observer.disconnect();
         }
       });

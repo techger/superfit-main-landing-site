@@ -18,5 +18,4 @@ export class DefaultNavigationComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

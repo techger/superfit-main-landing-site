@@ -8,20 +8,27 @@ export class UIStateService {
 
   constructor() {
     this.navConfig = {
+      navType: NavigationType.HomePage,
       ctaText: "Sign In",
       ctaUrl: environment.app_base_uri,
-      navType: NavigationType.HomePage
+      activeTab: null
     }
   }
 }
 
 export interface NavigationConfig {
+  navType: NavigationType
   ctaText?: string
   ctaUrl?: string
-  navType: NavigationType
+  activeTab?: NavigationTab
 }
 
 export const enum NavigationType {
   HomePage = "HomePage",
   TemplateDetail = "TemplateDetail"
+}
+
+export const enum NavigationTab {
+  Workouts = "Workouts",
+  Remote = "Remote"
 }

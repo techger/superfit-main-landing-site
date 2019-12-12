@@ -16,19 +16,28 @@
       </button>
       <div class="collapse navbar-collapse justify-content-between">
         <div class="py-1 py-lg-0">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a href="https://blog.superfitapp.com" class="nav-link">the superfit blog.</a>
+          <ul class="nav">
+            <li class="nav-item mx-1">
+              <a [className]="navConfig.activeTab == 'Workouts' ? 'nav-link btn btn-light active' : 'nav-link btn btn-light'"
+                href="/">
+                <img class="icon icon-md bg-primary" src="assets/img/logo_sm.jpg" alt="subtract icon"
+                  data-inject-svg />Workouts: For Everyone
+              </a>
             </li>
-            <li class="nav-item">
-              <a href="/online-coaching" class="nav-link">Tools for Fitness Professionals</a>
+            <li class="nav-item mx-1">
+              <a [className]="navConfig.activeTab == 'Remote' ? 'nav-link btn btn-light active' : 'nav-link btn btn-light'"
+                href="/remote">
+                <img class="icon icon-md bg-primary" src="assets/img/wcr_logo.jpg" alt="remote tool icon"
+                  data-inject-svg />Remote:
+                For Fitness Professionals
+              </a>
             </li>
           </ul>
         </div>
         <div class="py-1 py-lg-0">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a [href]="webAppLink" class="btn btn-outline-secondary">Sign In</a>
+              <a [href]="navConfig.ctaUrl" class="btn btn-outline-secondary">{{navConfig.ctaText}}</a>
             </li>
           </ul>
         </div>
@@ -38,8 +47,6 @@
 </div>
 
 <div *ngIf="navConfig.navType == 'TemplateDetail'" class="navbar-container">
-
-
   <nav class="navbar navbar-expand border-bottom-0" style="background-color: #F2EFE7;" data-sticky="top">
     <div class="container">
       <a class="navbar-brand fade-page" href="/">

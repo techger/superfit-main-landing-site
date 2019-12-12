@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UIStateService, NavigationType } from '../../services/ui-state.service';
+import { UIStateService, NavigationType, NavigationTab } from '../../services/ui-state.service';
 import { Observable, throwError } from 'rxjs';
 import { Journey_Template_Response_V1 } from 'superfitjs';
 import { ApiService } from '../../services/api.service';
@@ -33,9 +33,10 @@ export class TrainingPlanTemplateComponent implements OnInit {
     }
     this.uiState.showNavigation = true
     this.uiState.navConfig = {
+      navType: NavigationType.TemplateDetail,
       ctaText: "Start Plan",
       ctaUrl: "https://itunes.apple.com/us/app/superfit-sports-workouts/id1225772126",
-      navType: NavigationType.TemplateDetail
+      activeTab: NavigationTab.Remote
     }
 
     this.trainingPlanTemplate$ = this.apiService

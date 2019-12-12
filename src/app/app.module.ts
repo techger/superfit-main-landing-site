@@ -21,6 +21,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { UGCTermsComponent } from './ugcterms/ugcterms.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { TrainingPlanTemplateComponent } from './remote/training-plan-template/training-plan-template.component';
+import { LazyImageModule } from './modules/lazy-image/lazy-image.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TrainingPlanTemplateComponent } from './remote/training-plan-template/t
     TrainingPlanTemplateComponent
   ],
   imports: [
+    LazyImageModule,
     BrowserModule,
     NoopAnimationsModule,
     HttpClientModule,

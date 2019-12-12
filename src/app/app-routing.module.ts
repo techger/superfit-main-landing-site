@@ -49,7 +49,7 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
             component: RemotelyComponent,
             data: {
               title: 'Workout Spreadsheet',
-              description: 'Add Online Coaching to your Personal Training. For Independent trainers and fitness professionals',
+              description: 'Remote coaching tool for fitness professionals and personal trainers.',
               ogUrl: 'https://www.superfitapp.com/workout-spreadsheet'
             }
           },
@@ -57,8 +57,17 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
             path: "online-coaching",
             component: RemotelyComponent,
             data: {
-              title: 'For Professionals',
-              description: 'Add Online Coaching to your Personal Training. For Independent trainers and fitness professionals.',
+              title: 'SuperFit Remote',
+              description: 'Remote Coaching Software for personal trainers and fitness professionals.',
+              ogUrl: 'https://www.superfitapp.com/online-coaching'
+            }
+          },
+          {
+            path: "remote",
+            component: RemotelyComponent,
+            data: {
+              title: 'SuperFit Remote',
+              description: 'Remote Coaching Software for personal trainers and fitness professionals.',
               ogUrl: 'https://www.superfitapp.com/online-coaching'
             }
           },
@@ -89,10 +98,10 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
     ], {
       preloadingStrategy: PreloadAllModules
     })
-  ],
+  ]
+  ,
   exports: [RouterModule],
   declarations: [
-
   ]
 })
 export class AppRoutingModule { }

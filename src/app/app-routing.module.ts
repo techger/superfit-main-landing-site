@@ -87,7 +87,7 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
             ]
           },
           {
-            path: ":username/plans/:templateId",
+            path: "plans/:templateId",
             component: TrainingPlanTemplateComponent,
           },
           {

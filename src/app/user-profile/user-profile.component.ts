@@ -5,7 +5,8 @@ import { Phase_Response_V1, Journey_Template_Response_V1, Level, IAthletePublicI
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
-
+import { UIStateService } from '../services/ui-state.service';
+declare var Beacon: any;
 
 @Component({
   selector: 'app-user-profile',
@@ -14,15 +15,17 @@ import { map } from 'rxjs/operators';
 })
 export class UserProfileComponent implements OnInit {
   private username?: string
-  userPublicProfile$: Observable<IAthletePublicInfo>
+  private userPublicProfile$: Observable<IAthletePublicInfo>
   professionalProfile$: Observable<IProPublicInfo>
   plans: Journey_Template_Response_V1[] = []
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private readonly apiService: ApiService) {
-
+    private readonly apiService: ApiService,
+    private readonly uiState: UIStateService
+  ) {
+    this.uiState.showNavigation = false
     this.username = this.route.snapshot.paramMap.get("username");
 
     if (!this.username) {
@@ -47,6 +50,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   sortedPhasesByOrder(phases: Phase_Response_V1[]): Phase_Response_V1[] {
@@ -57,7 +61,6 @@ export class UserProfileComponent implements OnInit {
     if (phase.title) {
       return phase.title
     }
-
     return `Phase ${phase.order + 1}`
   }
 

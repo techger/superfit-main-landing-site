@@ -39,9 +39,11 @@ export class ApiService {
   catalogSectionBaseUrl(version: number): string {
     return `${environment.superfit_build_base_uri}/v1/journeys-catalog`;
   }
+
   journeyTemplatesBaseUrl(version: number): string {
     return `${environment.superfit_build_base_uri}/v1/journey-templates`;
   }
+
   phasesBaseUrl(): string {
     return `${environment.superfit_build_base_uri}/v1/phases`;
   }
@@ -74,6 +76,13 @@ export class ApiService {
   fetchUserPublicInfo(username: string): Observable<IAthletePublicInfo> {
     const url = `${environment.superfit_workouts_base_uri}/v1/show/athletes/${username}`;
     return this.http.get<IAthletePublicInfo>(url)
+  }
+
+  fetchTrainingPlanTemplate(
+    id: string
+  ): Observable<Journey_Template_Response_V1> {
+    const url = `${this.journeyTemplatesBaseUrl(1)}/${id}`;
+    return this.fetchOne(url)
   }
 
   fetchPublicProPlans(

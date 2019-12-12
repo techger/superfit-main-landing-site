@@ -17,7 +17,6 @@ scripts:
         - prismjs
         - scrollmonitor
         - smartwizard
-        - smooth-scroll
         - twitter-fetcher
         - typed.js
     globals:
@@ -31,6 +30,5 @@ scripts:
         plyr: Plyr
         prismjs: Prism
         scrollmonitor: scrollMonitor
-        smooth-scroll: SmoothScroll
         twitter-fetcher: twitterFetcher
         typed.js: Typed

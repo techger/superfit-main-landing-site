@@ -5,7 +5,6 @@ import { Meta, Title } from '@angular/platform-browser';
 export class SEOService {
   constructor(private title: Title, private meta: Meta) { }
 
-
   updateTitle(title: string) {
     this.title.setTitle(title);
   }

@@ -16,17 +16,8 @@ export class CurrentUserService {
   }
 
   constructor(
-    private apiService: ApiService,
+    private apiService: ApiService
   ) {
-    const currentUserLocalStore = localStorage.getItem(CurrentUserService.CURRENT_USER_KEY)
-    if (currentUserLocalStore) {
-      this.currentUser = JSON.parse(currentUserLocalStore);
-    }
-  }
-
-  cacheCurrentUser(user: IAthlete_Response_V1) {
-    this.currentUser = user
-    localStorage.setItem(CurrentUserService.CURRENT_USER_KEY, JSON.stringify(user));
   }
 
   updateCurrentUser(

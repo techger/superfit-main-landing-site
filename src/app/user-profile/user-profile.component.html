@@ -1,6 +1,5 @@
 <div *ngIf="professionalProfile$ | async as proProfile; else loading">
 
-
   <section id="typed" class="has-divider">
     <div class="container" data-aos="fade-up">
       <div class="row align-items-center justify-content-around">
@@ -45,7 +44,7 @@
             <div class="col-auto">
               <ul class="nav">
                 <li class="nav-item">
-                  <a href="https://instagram.com/superfit.journey" class="nav-link">
+                  <a href="https://instagram.com/onsuperfit" class="nav-link">
                     <svg class="icon undefined" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <title>Instagram icon</title>
                       <path
@@ -63,7 +62,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="https://www.facebook.com/superfit.journey/" class="nav-link">
+                  <a href="https://www.facebook.com/onsuperfit/" class="nav-link">
                     <svg class="icon undefined" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <title>Facebook icon</title>
                       <path
@@ -92,9 +91,9 @@
     <div class="container">
       <div class="row justify-content-center text-center mb-5">
         <div class="col-xl-8 col-lg-9">
-          <h2 class="display-5 mx-xl-6">Journeys Created by Me</h2>
+          <h2 class="display-5 mx-xl-6">My Training Plans</h2>
           <p class="lead">
-            A Journey is a set of workouts over several weeks designed to help you reach an athletic goal.
+            A Training Plan is a set of workouts over several weeks designed to help you reach a goal.
           </p>
         </div>
       </div>
@@ -105,7 +104,7 @@
 
       <div *ngIf="plans?.length == 0" class="row justify-content-center text-center mb-5">
         <p>
-          No public journeys at the moment.
+          No public training plans at the moment.
         </p>
       </div>
 
@@ -121,6 +120,7 @@
                 <div
                   style="position:absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.2);">
                 </div>
+
                 <img src="{{plan.mainImageUrl}}" alt="Image" class="jarallax-img">
 
                 <div class="icon-round icon-round-sm">
@@ -138,8 +138,11 @@
             </div>
           </div>
         </div>
+
         <div class="col-md-6" data-aos="fade">
-          <h3 class="h1">{{plan.title}}</h3>
+          <a [href]="'/plans/'+ plan.id">
+            <h3 class="h1" style="text-decoration: underline;">{{plan.title}}</h3>
+          </a>
           <p class="lead">{{plan.shortDescription}}</p>
           <ul class="list-unstyled mb-0">
             <li class=" d-flex py-2">

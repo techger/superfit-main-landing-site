@@ -1,0 +1,196 @@
+<div *ngIf="trainingPlanTemplate$ | async as template; else loading">
+  <section class="bg-dark text-light overlay min-vh-100 d-flex flex-column justify-content-end jarallax" data-jarallax
+    data-speed="0.5">
+    <img [src]="template.mainImageUrl" alt="Image" class="jarallax-img opacity-60">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+          </div>
+          <h1>{{template.title}}</h1>
+          <div class="d-flex align-items-center">
+            <a href="#">
+              <img [src]="template.owner.pictureUrl" alt="Avatar" class="avatar mr-2">
+            </a>
+            <div>
+              <div>by <a href="#">{{template.owner.name}}</a>
+              </div>
+              <div class="text-small text-muted">{{template.owner.title}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-0">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-10">
+          <article class="article">
+            <p class="lead">
+              {{template.fullDescription}}
+            </p>
+          </article>
+        </div>
+      </div>
+      <div class="row justify-content-center text-center">
+        <div class="col-xl-7 col-lg-8 col-md-10">
+
+          <div class="row">
+            <div class="col-4">
+
+              <svg class="icon icon-md bg-primary-3" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12.3616 17.7407L8.27722 19.888C7.78838 20.145 7.18375 19.957 6.92675 19.4682C6.82441 19.2735 6.7891 19.0505 6.82627 18.8338L7.60632 14.2858L4.30199 11.0648C3.90651 10.6793 3.89841 10.0462 4.28391 9.65073C4.43742 9.49325 4.63856 9.39076 4.8562 9.35913L9.42268 8.69559L11.4649 4.55766C11.7093 4.0624 12.3089 3.85906 12.8042 4.10349C13.0014 4.20082 13.161 4.36044 13.2583 4.55766L15.3005 8.69559L19.867 9.35913C20.4136 9.43855 20.7922 9.94599 20.7128 10.4925C20.6812 10.7102 20.5787 10.9113 20.4212 11.0648L17.1169 14.2858L17.8969 18.8338C17.9903 19.3781 17.6247 19.8951 17.0804 19.9884C16.8636 20.0256 16.6406 19.9903 16.446 19.888L12.3616 17.7407Z"
+                  fill="#212529" />
+              </svg>
+
+              <div class="mt-2">
+                <h5>To improve in {{template.sport | titlecase }}</h5>
+              </div>
+              <p>
+
+              </p>
+            </div>
+
+            <div class="col-4">
+              <svg class="icon icon-md bg-primary-3" width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>Icon For Clock</title>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <rect opacity="0" x="0" y="0" width="24" height="24"></rect>
+                  <path
+                    d="M12,22 C7.02943725,22 3,17.9705627 3,13 C3,8.02943725 7.02943725,4 12,4 C16.9705627,4 21,8.02943725 21,13 C21,17.9705627 16.9705627,22 12,22 Z"
+                    fill="#000000" opacity="0.3"></path>
+                  <path
+                    d="M11.9630156,7.5 L12.0475062,7.5 C12.3043819,7.5 12.5194647,7.69464724 12.5450248,7.95024814 L13,12.5 L16.2480695,14.3560397 C16.403857,14.4450611 16.5,14.6107328 16.5,14.7901613 L16.5,15 C16.5,15.2109164 16.3290185,15.3818979 16.1181021,15.3818979 C16.0841582,15.3818979 16.0503659,15.3773725 16.0176181,15.3684413 L11.3986612,14.1087258 C11.1672824,14.0456225 11.0132986,13.8271186 11.0316926,13.5879956 L11.4644883,7.96165175 C11.4845267,7.70115317 11.7017474,7.5 11.9630156,7.5 Z"
+                    fill="#000000"></path>
+                </g>
+              </svg>
+
+              <div class="mt-2">
+                <h5>{{numberOfWeeks}} Week Training Plan</h5>
+              </div>
+            </div>
+            <div class="col-4">
+              <svg class="icon icon-md bg-primary-3" width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>Icon For Fire</title>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <rect opacity="0" x="0" y="0" width="24" height="24"></rect>
+                  <path
+                    d="M14,7 C13.6666667,10.3333333 12.6666667,12.1167764 11,12.3503292 C11,12.3503292 12.5,6.5 10.5,3.5 C10.5,3.5 10.287918,6.71444735 8.14498739,10.5717225 C7.14049032,12.3798172 6,13.5986793 6,16 C6,19.428689 9.51143904,21.2006583 12.0057195,21.2006583 C14.5,21.2006583 18,20.0006172 18,15.8004732 C18,14.0733981 16.6666667,11.1399071 14,7 Z"
+                    fill="#000000"></path>
+                </g>
+              </svg>
+              <div class="mt-2">
+                <h5>{{experienceLevel}}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container col-xl-8 col-lg-10 col-md-10">
+      <div class="row justify-content-around align-items-center">
+        <div class="col-xl-5 col-md-5">
+          <div class="container mt-lg-7 mb-3">
+            <div class="row o-hidden o-lg-visible">
+              <div class="col d-flex flex-column align-items-center">
+                <ol class="process-vertical">
+
+                  <li *ngFor="let phase of template.phases" data-aos="fade-left">
+                    <div class="process-circle bg-primary"></div>
+                    <div>
+                      <img [src]="phase.mainImageUrl" alt="Phase Image" class="avatar avatar-lg mb-2">
+                      <h5 class="mb-0">{{phase.title}}</h5>
+                      <span class="text-small text-muted">{{phase.numberOfWeeks}} Weeks</span>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-7 col-md-7">
+          <h3 class="h1">Training Schedule</h3>
+          <div class="mt-4 mb-3">
+            <div *ngFor="let phase of template.phases; index as i;">
+              <div class="border-bottom pb-3 mb-3">
+                <div attr.data-target="{{ '#panel-' +i }}" class="accordion-panel-title" data-toggle="collapse"
+                  role="button" aria-expanded="true">
+                  <span class="h6 mb-0">{{phase.title || 'Phase' }}</span>
+                  <img class="icon" src="assets/img/icons/interface/plus.svg" alt="plus interface icon"
+                    data-inject-svg />
+                </div>
+
+                <div [className]="i===0 ? 'collapse show' : 'collapse '" id="{{ 'panel-' +i }}">
+                  <div class="pt-3">
+                    <p class="mb-0">
+                      {{phase.fullDescription}} {{i}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pt-0 bg-primary-3 text-light has-divider">
+    <div class="divider flip-y">
+      <svg width="100%" height="96px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
+        <path d="M0,0 C16.6666667,66 33.3333333,99 50,99 C66.6666667,99 83.3333333,66 100,0 L100,100 L0,100 L0,0 Z">
+        </path>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-5">
+          <div class="row justify-content-center">
+            <div class="col-8 col-md col-lg-8 mb-4 mb-md-0" data-aos="fade-right">
+              <div class="mobile-screenshot rotate-left layer-1">
+                <img src="assets/img/workouts-weekly-schedule.jpg" alt="Screenshot">
+                <img src="assets/img/iphone-xr.svg" alt="iPhone XR">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-5 col-lg-6 col-md-7">
+          <div class="mt-3 mb-4">
+            <h3 class="h1">Start this Plan on iOS</h3>
+          </div>
+          <div class="d-flex">
+            <a href="https://itunes.apple.com/us/app/superfit-sports-workouts/id1225772126" class="btn btn-white"
+              angulartics2On="click" angularticsAction="DownloadClickTemplateDetail" angularticsLabel="downloadButton"
+              angularticsValue="downloadForiOS" [angularticsProperties]="{'location': 'Template Detail Bottom'}">
+
+              <svg class="icon icon-md bg-primary-2" width="15" height="21" viewBox="0 0 30 36" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24.6211 19.1257C24.6719 24.5737 29.4276 26.3866 29.4803 26.4097C29.4401 26.5375 28.7204 28.9932 26.9748 31.5298C25.4657 33.7229 23.8996 35.9079 21.4324 35.9531C19.0081 35.9976 18.2286 34.5238 15.457 34.5238C12.6862 34.5238 11.8201 35.9079 9.52526 35.9976C7.1438 36.0873 5.33027 33.6262 3.80877 31.4411C0.699615 26.9716 -1.67642 18.8114 1.51399 13.3031C3.09892 10.5677 5.93131 8.83545 9.00562 8.79104C11.3442 8.74668 13.5514 10.3554 14.981 10.3554C16.4098 10.3554 19.092 8.42077 21.9119 8.7049C23.0924 8.75375 26.4061 9.17904 28.5338 12.2759C28.3623 12.3816 24.5799 14.571 24.6211 19.1257V19.1257ZM20.0649 5.74794C21.3293 4.2262 22.1802 2.1078 21.9481 0C20.1256 0.0728312 17.9219 1.20753 16.6147 2.72844C15.4432 4.07527 14.4172 6.23095 14.6941 8.29703C16.7254 8.4533 18.8005 7.27065 20.0649 5.74794Z"
+                  fill="#ADB5BD" />
+              </svg>
+
+              <span class="ml-1">Download for iOS</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<ng-template #loading>
+  <div class="row justify-content-center text-center mb-5">
+    <div class="loader">
+      <div class="loading-animation"></div>
+    </div>
+  </div>
+</ng-template>

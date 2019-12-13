@@ -35,7 +35,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Gilroy", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -56,7 +56,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Gilroy", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -375,19 +375,19 @@ h6, .h6 {
 }
 
 .display-2 {
-  font-size: 5.5rem;
+  font-size: 5.0rem;
   font-weight: 500;
   line-height: 1.2;
 }
 
 .display-3 {
-  font-size: 4.5rem;
+  font-size: 4.0rem;
   font-weight: 500;
   line-height: 1.2;
 }
 
 .display-4 {
-  font-size: 3.5rem;
+  font-size: 3.0rem;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -5647,7 +5647,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Gilroy", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5760,7 +5760,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Gilroy", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -10556,37 +10556,6 @@ svg.bg-primary-3-alt * {
   fill: #007C70;
 }
 
-@font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Medium.otf") format("opentype");
-  font-style: normal;
-  font-weight: 400;
-}
-
-
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Medium.otf") format("opentype");
-  font-style: normal;
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-SemiBold.otf") format("opentype");
-  font-style: normal;
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-ExtraBold.otf") format("opentype");
-  font-style: normal;
-  font-weight: 900;
-}
-
-
 html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -14750,27 +14719,31 @@ https://flickity.metafizzy.co
   z-index: 2;
 }
 
-.image-collage>a:nth-child(1) img, .image-collage>a:nth-child(3) img {
-  max-width: 345px;
+.image-collage>a:nth-child(1) img {
+  max-width: 275px;
+}
+
+.image-collage>a:nth-child(3) img {
+  max-width: 200px;
 }
 
 .image-collage>a:nth-child(1) {
-  top: -3rem;
-  right: 0;
+  top: -5rem;
+  right: -60px;
   -webkit-transform: rotateZ(10deg);
   transform: rotateZ(10deg);
-}
-
-.image-collage>a:nth-child(1):hover {
-  -webkit-transform: rotateZ(12deg) translate3d(0, -10px, 0);
-  transform: rotateZ(12deg) translate3d(0, -10px, 0);
 }
 
 .image-collage>a:nth-child(3) {
   -webkit-transform: rotateZ(-10deg);
   transform: rotateZ(-10deg);
-  bottom: -3rem;
-  left: 0;
+  bottom: -1rem;
+  left: -10px;
+}
+
+.image-collage>a:nth-child(1):hover {
+  -webkit-transform: rotateZ(12deg) translate3d(0, -10px, 0);
+  transform: rotateZ(12deg) translate3d(0, -10px, 0);
 }
 
 .image-collage>a:nth-child(3):hover {
@@ -14779,7 +14752,7 @@ https://flickity.metafizzy.co
 }
 
 .image-collage>a:nth-child(2) img {
-  max-width: 384px;
+  max-width: 375px;
 }
 
 .image-collage>a:nth-child(2):hover {
@@ -17176,7 +17149,7 @@ a.plyr__control::after, a.plyr__control::before {
 }
 
 .plyr {
-  font-family: "Gilroy", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .plyr__poster {
@@ -17488,96 +17461,69 @@ body.fade-page {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-}
-
-.process-circle:after {
-  content: '';
-  width: .5rem;
-  height: .5rem;
-  border-radius: 50%;
-}
-
-.process-circle.bg-primary {
-  background: rgba(55, 85, 190, 0.05) !important;
-}
-
-.process-circle.bg-primary:after {
-  background-color: #007C70;
-}
-
-.process-circle.bg-primary-2 {
-  background: rgba(255, 142, 136, 0.05) !important;
-}
-
-.process-circle.bg-primary-2:after {
-  background-color: #48BF84;
-}
-
-.process-circle.bg-primary-3 {
-  background: rgba(27, 31, 59, 0.05) !important;
-}
-
-.process-circle.bg-primary-3:after {
-  background-color: #DD9E00;
-}
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.125rem; }
+  .process-circle:empty:after {
+    content: '';
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%; }
+  .process-circle:empty.bg-primary {
+    background: rgba(83, 91, 254, 0.05) !important; }
+    .process-circle:empty.bg-primary:after {
+      background-color: #535BFE; }
+  .process-circle:empty.bg-primary-2 {
+    background: rgba(240, 101, 67, 0.05) !important; }
+    .process-circle:empty.bg-primary-2:after {
+      background-color: #F06543; }
+  .process-circle:empty.bg-primary-3 {
+    background: rgba(27, 31, 59, 0.05) !important; }
+    .process-circle:empty.bg-primary-3:after {
+      background-color: #1B1F3B; }
 
 .process-vertical {
   padding: 0;
   width: 100%;
   list-style: none;
   display: flex;
-  flex-direction: column;
-}
-
-.process-vertical li {
-  display: flex;
-  align-items: center;
-}
-
-.process-vertical li .process-circle {
-  margin-right: 1.5rem;
-}
-
-.process-vertical li:not(:last-child) {
-  position: relative;
-  margin-bottom: 1.5rem;
-}
+  flex-direction: column; }
+  .process-vertical li {
+    display: flex;
+    align-items: center; }
+    .process-vertical li .process-circle {
+      margin-right: 1.5rem; }
+    .process-vertical li:not(:last-child) {
+      position: relative;
+      margin-bottom: 1.5rem; }
 
 @media (min-width: 768px) {
   .process-vertical li {
     width: 50%;
-    margin-left: 50%;
-  }
-  .process-vertical li .process-circle {
-    margin-left: -1.5rem;
-  }
-  .process-vertical li:nth-child(even) {
-    flex-direction: row-reverse;
-    text-align: right;
-    margin-left: 0;
-    margin-right: 50%;
-  }
-  .process-vertical li:nth-child(even) .process-circle {
-    margin-right: -1.5rem;
-    margin-left: 1.5rem;
-  }
-  .process-vertical li:not(:last-child) {
-    padding-bottom: 4.5rem;
-    margin-bottom: 0;
-  }
-  .process-vertical li:not(:last-child):after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 3rem;
-    background: #dee2e6;
-    position: absolute;
-    top: 4.125rem;
-  }
+    margin-left: 50%; }
+    .process-vertical li .process-circle {
+      margin-left: -1.5rem; }
+    .process-vertical li:nth-child(even) {
+      flex-direction: row-reverse;
+      text-align: right;
+      margin-left: 0;
+      margin-right: 50%; }
+      .process-vertical li:nth-child(even) .process-circle {
+        margin-right: -1.5rem;
+        margin-left: 1.5rem; }
+    .process-vertical li:not(:last-child) {
+      padding-bottom: 4.5rem;
+      margin-bottom: 0; }
+      .process-vertical li:not(:last-child):after {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 3rem;
+        background: #dee2e6;
+        position: absolute;
+        top: 4.125rem; }
   .text-light .process-vertical li:not(:last-child):after {
-    background: rgba(255, 255, 255, 0.25);
-  }
-}
+    background: rgba(255, 255, 255, 0.25); } }
 
 .progress-bar {
   font-weight: 500;

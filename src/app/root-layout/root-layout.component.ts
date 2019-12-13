@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { SharedModule } from '../modules/shared/shared.module';
+import { UIStateService } from '../services/ui-state.service';
 
 @Component({
   selector: 'app-root-layout',
@@ -7,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RootLayoutComponent implements OnInit {
 
+  @Input() showNavigation: boolean
+
   constructor(
+    readonly uiState: UIStateService
   ) { }
 
   ngOnInit() {
+    this.showNavigation = this.uiState.showNavigation
   }
 
 }

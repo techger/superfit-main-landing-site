@@ -25,6 +25,7 @@
     "@angular/router": "~7.2.0",
     "angulartics2": "^7.5.2",
     "auth0-js": "^9.11.1",
+    "branch-sdk": "^2.52.3",
     "compression": "^1.7.4",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",

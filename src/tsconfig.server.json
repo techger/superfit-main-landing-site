@@ -6,5 +6,11 @@
   },
   "angularCompilerOptions": {
     "entryModule": "app/app.server.module#AppServerModule"
+  },
+  "stylePreprocessorOptions": {
+    "includePaths": [
+      "src/styles.css",
+      "src/assets.css"
+    ]
   }
 }

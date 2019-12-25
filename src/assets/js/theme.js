@@ -13,13 +13,9 @@
   scrollMonitor = scrollMonitor && scrollMonitor.hasOwnProperty('default') ? scrollMonitor['default'] : scrollMonitor;
   flatpickr = flatpickr && flatpickr.hasOwnProperty('default') ? flatpickr['default'] : flatpickr;
   Flickity = Flickity && Flickity.hasOwnProperty('default') ? Flickity['default'] : Flickity;
-  Isotope$1 = Isotope$1 && Isotope$1.hasOwnProperty('default') ? Isotope$1['default'] : Isotope$1;
   jarallax = jarallax && jarallax.hasOwnProperty('default') ? jarallax['default'] : jarallax;
   Plyr = Plyr && Plyr.hasOwnProperty('default') ? Plyr['default'] : Plyr;
-  Prism = Prism && Prism.hasOwnProperty('default') ? Prism['default'] : Prism;
   SmoothScroll = SmoothScroll && SmoothScroll.hasOwnProperty('default') ? SmoothScroll['default'] : SmoothScroll;
-  twitterFetcher = twitterFetcher && twitterFetcher.hasOwnProperty('default') ? twitterFetcher['default'] : twitterFetcher;
-  Typed = Typed && Typed.hasOwnProperty('default') ? Typed['default'] : Typed;
 
   //
   AOS.init({

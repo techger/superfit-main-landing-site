@@ -7,7 +7,6 @@ import { catchError, tap } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
 import { UIStateService } from '../services/ui-state.service';
 import { PhotoService } from '../services/photo.service';
-declare var Beacon: any;
 
 @Component({
   selector: 'app-user-profile',
@@ -104,6 +103,5 @@ export class UserProfileComponent implements OnInit {
   mainImageForPlan(plan: Journey_Template_Response_V1): string {
     const defaultUrl = "/assets/img/placeholder.png"
     return defaultUrl
-
   }
 }

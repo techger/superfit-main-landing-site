@@ -24,6 +24,7 @@ export class LazyImageDirective implements OnInit {
   }
 
   setUpObserver() {
+
     return new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

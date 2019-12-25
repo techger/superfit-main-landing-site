@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "main-website-production",
+    "target": "onsuperfit-prod",
     "public": "dist",
     "ignore": [
       "firebase.json",

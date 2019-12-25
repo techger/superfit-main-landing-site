@@ -6,6 +6,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
 import { UIStateService } from '../services/ui-state.service';
+import { PhotoService } from '../services/photo.service';
 declare var Beacon: any;
 
 @Component({
@@ -23,6 +24,7 @@ export class UserProfileComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private readonly apiService: ApiService,
+    private readonly photoService: PhotoService,
     private readonly uiState: UIStateService
   ) {
     this.uiState.showNavigation = false
@@ -97,5 +99,11 @@ export class UserProfileComponent implements OnInit {
       default:
         return "Some training experience preferred"
     }
+  }
+
+  mainImageForPlan(plan: Journey_Template_Response_V1): string {
+    const defaultUrl = "/assets/img/placeholder.png"
+    return defaultUrl
+
   }
 }

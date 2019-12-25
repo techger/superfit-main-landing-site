@@ -231,17 +231,6 @@
       RECAPTCHA: '[data-recaptcha]'
     }; // Activate tooltips
 
-    $('body').tooltip({
-      selector: '[data-toggle="tooltip"]',
-      container: 'body'
-    }); // Activate popovers
-
-    $('body').popover({
-      selector: '[data-toggle="popover"]',
-      container: 'body'
-    }); // Activate toasts
-
-    $('.toast').toast();
     var Util = {
       version: VERSION,
       selector: Selector,

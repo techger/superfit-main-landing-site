@@ -10,7 +10,9 @@ import {
   Journey_Template_Response_V1,
   IAthlete_Response_V1,
   ISignInDTO_V1,
-  IAthletePublicInfo
+  IAthletePublicInfo,
+  IVideoResponse_V1,
+  IPhotoResponse_V1
 } from "superfitjs";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "../../environments/environment";
@@ -38,6 +40,10 @@ export class ApiService {
   }
   catalogSectionBaseUrl(version: number): string {
     return `${environment.superfit_build_base_uri}/v1/journeys-catalog`;
+  }
+
+  imagesBaseUrl(version: number): string {
+    return `${environment.superfit_workouts_base_uri}/v${version}/images`;
   }
 
   journeyTemplatesBaseUrl(version: number): string {
@@ -143,5 +149,31 @@ export class ApiService {
     });
 
     return headers;
+  }
+
+  fetchVideos(
+    ids: string[]
+  ): Observable<IVideoResponse_V1[]> {
+    const headers = this.requestHeaders();
+    const url = `${this.imagesBaseUrl(1)}/videos`;
+    return this.http.get<IVideoResponse_V1[]>(url, {
+      headers: headers,
+      params: {
+        ids: ids
+      }
+    });
+  }
+
+  fetchPhotos(
+    ids: string[]
+  ): Observable<IPhotoResponse_V1[]> {
+    const headers = this.requestHeaders();
+    const url = `${this.imagesBaseUrl(1)}/photos`;
+    return this.http.get<IPhotoResponse_V1[]>(url, {
+      headers: headers,
+      params: {
+        ids: ids
+      }
+    });
   }
 }

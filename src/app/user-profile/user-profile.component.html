@@ -6,9 +6,8 @@
         <div class="col-md-5">
 
           <div class="square">
-            <img style="position: absolute;width: 100%;height: 100%;"
-              [src]="proProfile.pictureUrl || 'assets/img/placeholder.png'" alt="Profile Image"
-              class="rounded-circle layer-2">
+            <img style="position: absolute;width: 100%;height: 100%;" [sfPhoto]="proProfile.profilePhotoId"
+              alt="Profile Image" class="rounded-circle layer-2">
           </div>
 
           <div class="decoration bottom left" data-aos="fade-up">

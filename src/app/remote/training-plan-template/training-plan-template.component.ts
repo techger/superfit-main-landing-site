@@ -6,6 +6,9 @@ import { ApiService } from '../../services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { tap, catchError } from 'rxjs/operators';
 import TemplateUtils from '../template-utils'
+import { SEOService } from '../../services/seo.service';
+import { PhotoService } from '../../services/photo.service';
+
 
 @Component({
   selector: 'app-training-plan-template',
@@ -22,7 +25,10 @@ export class TrainingPlanTemplateComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private uiState: UIStateService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private seoService: SEOService,
+    private photoService: PhotoService
+
   ) {
 
     let templateId = this.route.snapshot.paramMap.get("templateId");
@@ -42,9 +48,21 @@ export class TrainingPlanTemplateComponent implements OnInit {
     this.trainingPlanTemplate$ = this.apiService
       .fetchTrainingPlanTemplate(templateId)
       .pipe(
-        tap(template => {
+        tap(async template => {
           this.numberOfWeeks = TemplateUtils.trainingPlanTemplateTotalWeeks(template)
           this.experienceLevel = TemplateUtils.experienceLevelText(template)
+
+          this.seoService.updateTitle(template.title);
+          this.seoService.updateOgUrl()
+
+          if (template.mainImagePhotoId) {
+            let photo = await this.photoService.getPhoto(template.mainImagePhotoId)
+            if (photo) {
+              this.seoService.updateImage(photo.masterUrl)
+            }
+          }
+          //Updating Description tag dynamically with title
+          this.seoService.updateDescription(template.shortDescription)
         }),
         catchError(error => {
           this.router.navigate(["/404"]);

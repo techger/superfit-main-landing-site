@@ -1,5 +1,5 @@
-import { Injectable, Input } from '@angular/core';
-import { tap, finalize, catchError, take, map } from "rxjs/operators"
+import { Injectable } from '@angular/core';
+import { tap, take, map } from "rxjs/operators"
 import { Observable } from 'rxjs';
 import {
   IPhotoResponse_V1,

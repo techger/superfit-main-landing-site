@@ -10,7 +10,7 @@
           <h1>{{template.title}}</h1>
           <div class="d-flex align-items-center">
             <a href="#">
-              <img [src]="template.owner.pictureUrl" alt="Avatar" class="avatar mr-2">
+              <img [sfPhoto]="template.owner.profilePhotoId" alt="Avatar" class="avatar mr-2">
             </a>
             <div>
               <div>by <a href="#">{{template.owner.name}}</a>
@@ -130,7 +130,7 @@
                 <div [className]="i===0 ? 'collapse show' : 'collapse '" id="{{ 'panel-' +i }}">
                   <div class="pt-3">
                     <p class="mb-0">
-                      {{phase.fullDescription}} {{i}}
+                      {{phase.fullDescription}}
                     </p>
                   </div>
                 </div>
